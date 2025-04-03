@@ -1,0 +1,19 @@
+# Robot Framework output files
+output.xml
+log.html
+report.html
+selenium-screenshot-*.png
+
+# Robot Framework debug files
+debug.txt
+debug.log
+pabot_results/
+
+# Robot Framework temporary files
+*.pyc
+__pycache__/
+.pabotsuitenames
+.DS_Store
+
+# Robot Framework test results
+results/ 
