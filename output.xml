@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-03T13:14:12.711582" rpa="false" schemaversion="5">
+<suite id="s1" name="Employee Tests" source="E:\ERP\dev\CursorAI\pythonfastapi\employee_tests.robot">
+<kw name="Setup Test Suite" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:16.383077" level="INFO">Creating Session using : alias=employee_api, url=http://localhost:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>employee_api</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-03T13:14:16.382087" elapsed="0.001847"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:16.386193" level="INFO">Opening browser 'edge' to base url 'http://localhost:8080'.</msg>
+<msg time="2025-04-03T13:14:16.398871" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<arg>${FRONTEND_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-03T13:14:16.384761" elapsed="3.892261"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-03T13:14:20.277787" elapsed="0.085689"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:16.376238" elapsed="3.987606"/>
+</kw>
+<test id="s1-t1" name="Create New Employee Via API" line="134">
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:20.372386" level="INFO">${name} = Patricia Hensley</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:20.370287" elapsed="0.002293"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:20.373668" level="INFO">${department} = Radiographer, therapeutic</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:20.373163" elapsed="0.000598"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:20.374835" level="INFO">${position} = Editor, magazine features</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:20.374172" elapsed="0.000806"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:20.377677" level="INFO">&amp;{employee} = { name=Patricia Hensley | department=Radiographer, therapeutic | position=Editor, magazine features }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:20.375586" elapsed="0.002292"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:20.378275" elapsed="0.000377"/>
+</return>
+<msg time="2025-04-03T13:14:20.379696" level="INFO">${employee_data} = {'name': 'Patricia Hensley', 'department': 'Radiographer, therapeutic', 'position': 'Editor, magazine features'}</msg>
+<var>${employee_data}</var>
+<status status="PASS" start="2025-04-03T13:14:20.369039" elapsed="0.010820"/>
+</kw>
+<kw name="Create Employee Via API">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:22.464506" level="INFO">POST Request : url=http://localhost:8000/employees/ 
+ path_url=/employees/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '112', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Patricia Hensley", "department": "Radiographer, therapeutic", "position": "Editor, magazine features"}' 
+ </msg>
+<msg time="2025-04-03T13:14:22.464740" level="INFO">POST Response : url=http://localhost:8000/employees/ 
+ status=201, reason=Created 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:21 GMT', 'server': 'uvicorn', 'content-length': '115', 'content-type': 'application/json'} 
+ body={"name":"Patricia Hensley","department":"Radiographer, therapeutic","position":"Editor, magazine features","id":47} 
+ </msg>
+<msg time="2025-04-03T13:14:22.465047" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/</arg>
+<arg>json=${employee_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:20.382887" elapsed="2.082237"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.465469" elapsed="0.000575"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-04-03T13:14:22.466248" elapsed="0.000337"/>
+</return>
+<msg time="2025-04-03T13:14:22.468062" level="INFO">${response} = {'name': 'Patricia Hensley', 'department': 'Radiographer, therapeutic', 'position': 'Editor, magazine features', 'id': 47}</msg>
+<var>${response}</var>
+<arg>${employee_data}</arg>
+<status status="PASS" start="2025-04-03T13:14:20.381305" elapsed="2.086856"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-04-03T13:14:22.469442" level="INFO">${id_str} = 47</msg>
+<var>${id_str}</var>
+<arg>${response}[id]</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.468872" elapsed="0.000652"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-04-03T13:14:22.470575" level="INFO">Length is 2.</msg>
+<arg>${id_str}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.470177" elapsed="0.000543"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response}[name]</arg>
+<arg>${employee_data}[name]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.471350" elapsed="0.000748"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response}[department]</arg>
+<arg>${employee_data}[department]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.472812" elapsed="0.000552"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response}[position]</arg>
+<arg>${employee_data}[position]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.474026" elapsed="0.000543"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:20.364694" elapsed="2.110496"/>
+</test>
+<test id="s1-t2" name="Create New Employee Via UI" line="144">
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:22.479215" level="INFO">${name} = Jennifer Nelson</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:22.478383" elapsed="0.000931"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:22.479949" level="INFO">${department} = IT sales professional</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:22.479602" elapsed="0.000417"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:22.480544" level="INFO">${position} = Horticulturist, commercial</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:22.480244" elapsed="0.000367"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:22.481599" level="INFO">&amp;{employee} = { name=Jennifer Nelson | department=IT sales professional | position=Horticulturist, commercial }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.480890" elapsed="0.000786"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:22.482056" elapsed="0.000103"/>
+</return>
+<msg time="2025-04-03T13:14:22.482704" level="INFO">${employee_data} = {'name': 'Jennifer Nelson', 'department': 'IT sales professional', 'position': 'Horticulturist, commercial'}</msg>
+<var>${employee_data}</var>
+<status status="PASS" start="2025-04-03T13:14:22.477824" elapsed="0.005018"/>
+</kw>
+<kw name="Create Employee Via UI">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:22.484974" level="INFO">Clicking element 'css:button[onclick='showAddModal()']'.</msg>
+<arg>${ADD_EMPLOYEE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.484263" elapsed="0.186582"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.671386" elapsed="0.323271"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:22.995850" level="INFO">Typing text 'Jennifer Nelson' into text field 'id:name'.</msg>
+<arg>${NAME_INPUT}</arg>
+<arg>${employee_data}[name]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:22.995124" elapsed="0.300793"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:23.297053" level="INFO">Typing text 'IT sales professional' into text field 'id:department'.</msg>
+<arg>${DEPARTMENT_INPUT}</arg>
+<arg>${employee_data}[department]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:23.296366" elapsed="0.251318"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:23.548803" level="INFO">Typing text 'Horticulturist, commercial' into text field 'id:position'.</msg>
+<arg>${POSITION_INPUT}</arg>
+<arg>${employee_data}[position]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:23.548223" elapsed="0.303284"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:23.852885" level="INFO">Clicking element 'css:button[onclick='saveEmployee()']'.</msg>
+<arg>${SAVE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:23.851899" elapsed="0.156973"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${employee_data}[name]</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-03T13:14:24.009402" elapsed="0.285192"/>
+</kw>
+<arg>${employee_data}</arg>
+<status status="PASS" start="2025-04-03T13:14:22.483543" elapsed="1.811348"/>
+</kw>
+<kw name="Verify Employee Exists">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:24.330303" level="INFO">Current page contains text 'Jennifer Nelson'.</msg>
+<arg>${employee_name}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-03T13:14:24.297692" elapsed="0.032924"/>
+</kw>
+<arg>${employee_data}[name]</arg>
+<status status="PASS" start="2025-04-03T13:14:24.295764" elapsed="0.035147"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:22.476696" elapsed="1.855130"/>
+</test>
+<test id="s1-t3" name="Search Employee" line="149">
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:24.337624" level="INFO">${name} = Troy Valencia</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:24.336067" elapsed="0.001716"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:24.338899" level="INFO">${department} = Nature conservation officer</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:24.338316" elapsed="0.000677"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:24.339791" level="INFO">${position} = Cabin crew</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:24.339346" elapsed="0.000553"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:24.341190" level="INFO">&amp;{employee} = { name=Troy Valencia | department=Nature conservation officer | position=Cabin crew }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:24.340182" elapsed="0.001099"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:24.341503" elapsed="0.000152"/>
+</return>
+<msg time="2025-04-03T13:14:24.342141" level="INFO">${employee_data} = {'name': 'Troy Valencia', 'department': 'Nature conservation officer', 'position': 'Cabin crew'}</msg>
+<var>${employee_data}</var>
+<status status="PASS" start="2025-04-03T13:14:24.334998" elapsed="0.007237"/>
+</kw>
+<kw name="Create Employee Via UI">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:24.347809" level="INFO">Clicking element 'css:button[onclick='showAddModal()']'.</msg>
+<arg>${ADD_EMPLOYEE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:24.346859" elapsed="0.159298"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:24.506768" elapsed="0.293917"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:24.802281" level="INFO">Typing text 'Troy Valencia' into text field 'id:name'.</msg>
+<arg>${NAME_INPUT}</arg>
+<arg>${employee_data}[name]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:24.801242" elapsed="0.270987"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:25.073606" level="INFO">Typing text 'Nature conservation officer' into text field 'id:department'.</msg>
+<arg>${DEPARTMENT_INPUT}</arg>
+<arg>${employee_data}[department]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:25.072812" elapsed="0.227708"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:25.301485" level="INFO">Typing text 'Cabin crew' into text field 'id:position'.</msg>
+<arg>${POSITION_INPUT}</arg>
+<arg>${employee_data}[position]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:25.300895" elapsed="0.206847"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:25.508959" level="INFO">Clicking element 'css:button[onclick='saveEmployee()']'.</msg>
+<arg>${SAVE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:25.508300" elapsed="0.143904"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${employee_data}[name]</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-03T13:14:25.652917" elapsed="0.264787"/>
+</kw>
+<arg>${employee_data}</arg>
+<status status="PASS" start="2025-04-03T13:14:24.343118" elapsed="1.574780"/>
+</kw>
+<kw name="Search Employee">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:25.920251" level="INFO">Typing text 'Troy Valencia' into text field 'id:searchInput'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:25.919265" elapsed="0.338596"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.259718" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-03T13:14:26.258338" elapsed="1.001744"/>
+</kw>
+<arg>${employee_data}[name]</arg>
+<status status="PASS" start="2025-04-03T13:14:25.918472" elapsed="1.341981"/>
+</kw>
+<kw name="Verify Employee Exists">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:27.300208" level="INFO">Current page contains text 'Troy Valencia'.</msg>
+<arg>${employee_name}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.262914" elapsed="0.037445"/>
+</kw>
+<arg>${employee_data}[name]</arg>
+<status status="PASS" start="2025-04-03T13:14:27.261648" elapsed="0.038874"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:24.333628" elapsed="2.967446"/>
+</test>
+<test id="s1-t4" name="Update Employee" line="155">
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.304360" level="INFO">${name} = Lisa Hensley</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:27.303610" elapsed="0.000820"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.304986" level="INFO">${department} = Horticultural therapist</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:27.304710" elapsed="0.000329"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.305606" level="INFO">${position} = Chartered management accountant</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:27.305261" elapsed="0.000394"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.306337" level="INFO">&amp;{employee} = { name=Lisa Hensley | department=Horticultural therapist | position=Chartered management accountant }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.305847" elapsed="0.000545"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:27.306520" elapsed="0.000076"/>
+</return>
+<msg time="2025-04-03T13:14:27.306937" level="INFO">${employee_data} = {'name': 'Lisa Hensley', 'department': 'Horticultural therapist', 'position': 'Chartered management accountant'}</msg>
+<var>${employee_data}</var>
+<status status="PASS" start="2025-04-03T13:14:27.303147" elapsed="0.003965"/>
+</kw>
+<kw name="Create Employee Via API">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:27.334131" level="INFO">POST Request : url=http://localhost:8000/employees/ 
+ path_url=/employees/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '112', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Lisa Hensley", "department": "Horticultural therapist", "position": "Chartered management accountant"}' 
+ </msg>
+<msg time="2025-04-03T13:14:27.334298" level="INFO">POST Response : url=http://localhost:8000/employees/ 
+ status=201, reason=Created 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:27 GMT', 'server': 'uvicorn', 'content-length': '115', 'content-type': 'application/json'} 
+ body={"name":"Lisa Hensley","department":"Horticultural therapist","position":"Chartered management accountant","id":50} 
+ </msg>
+<msg time="2025-04-03T13:14:27.334592" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/</arg>
+<arg>json=${employee_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.308481" elapsed="0.026185"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.335019" elapsed="0.000513"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-04-03T13:14:27.335707" elapsed="0.000111"/>
+</return>
+<msg time="2025-04-03T13:14:27.337086" level="INFO">${response} = {'name': 'Lisa Hensley', 'department': 'Horticultural therapist', 'position': 'Chartered management accountant', 'id': 50}</msg>
+<var>${response}</var>
+<arg>${employee_data}</arg>
+<status status="PASS" start="2025-04-03T13:14:27.307901" elapsed="0.029307"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.339165" level="INFO">${employee_id} = 50</msg>
+<var>${employee_id}</var>
+<arg>${response}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.338265" elapsed="0.001009"/>
+</kw>
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.342182" level="INFO">${name} = Jeremy Morgan</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:27.340998" elapsed="0.001373"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.343285" level="INFO">${department} = Chartered management accountant</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:27.342826" elapsed="0.000576"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.344283" level="INFO">${position} = Health and safety adviser</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:27.343762" elapsed="0.000618"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.345585" level="INFO">&amp;{employee} = { name=Jeremy Morgan | department=Chartered management accountant | position=Health and safety adviser }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.344718" elapsed="0.000980"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:27.345900" elapsed="0.000110"/>
+</return>
+<msg time="2025-04-03T13:14:27.346460" level="INFO">${updated_data} = {'name': 'Jeremy Morgan', 'department': 'Chartered management accountant', 'position': 'Health and safety adviser'}</msg>
+<var>${updated_data}</var>
+<status status="PASS" start="2025-04-03T13:14:27.340296" elapsed="0.006241"/>
+</kw>
+<kw name="Update Employee Via API">
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:27.376142" level="INFO">PUT Request : url=http://localhost:8000/employees/50 
+ path_url=/employees/50 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '115', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Jeremy Morgan", "department": "Chartered management accountant", "position": "Health and safety adviser"}' 
+ </msg>
+<msg time="2025-04-03T13:14:27.376270" level="INFO">PUT Response : url=http://localhost:8000/employees/50 
+ status=200, reason=OK 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:27 GMT', 'server': 'uvicorn', 'content-length': '118', 'content-type': 'application/json'} 
+ body={"name":"Jeremy Morgan","department":"Chartered management accountant","position":"Health and safety adviser","id":50} 
+ </msg>
+<msg time="2025-04-03T13:14:27.376455" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/${employee_id}</arg>
+<arg>json=${employee_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.348243" elapsed="0.028357"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.376876" elapsed="0.000332"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-04-03T13:14:27.377470" elapsed="0.000111"/>
+</return>
+<msg time="2025-04-03T13:14:27.378693" level="INFO">${update_response} = {'name': 'Jeremy Morgan', 'department': 'Chartered management accountant', 'position': 'Health and safety adviser', 'id': 50}</msg>
+<var>${update_response}</var>
+<arg>${employee_id}</arg>
+<arg>${updated_data}</arg>
+<status status="PASS" start="2025-04-03T13:14:27.347355" elapsed="0.031421"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${update_response}[name]</arg>
+<arg>${updated_data}[name]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.379457" elapsed="0.000636"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:27.302230" elapsed="0.078405"/>
+</test>
+<test id="s1-t5" name="Delete Employee" line="164">
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.384254" level="INFO">${name} = Stephanie Lindsey</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:27.383425" elapsed="0.000915"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.384995" level="INFO">${department} = Building control surveyor</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:27.384637" elapsed="0.000494"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.386099" level="INFO">${position} = English as a foreign language teacher</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:27.385691" elapsed="0.000483"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.387246" level="INFO">&amp;{employee} = { name=Stephanie Lindsey | department=Building control surveyor | position=English as a foreign language teacher }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.386491" elapsed="0.000839"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:27.387495" elapsed="0.000098"/>
+</return>
+<msg time="2025-04-03T13:14:27.388132" level="INFO">${employee_data} = {'name': 'Stephanie Lindsey', 'department': 'Building control surveyor', 'position': 'English as a foreign language teacher'}</msg>
+<var>${employee_data}</var>
+<status status="PASS" start="2025-04-03T13:14:27.382850" elapsed="0.005419"/>
+</kw>
+<kw name="Create Employee Via API">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:27.412096" level="INFO">POST Request : url=http://localhost:8000/employees/ 
+ path_url=/employees/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '125', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Stephanie Lindsey", "department": "Building control surveyor", "position": "English as a foreign language teacher"}' 
+ </msg>
+<msg time="2025-04-03T13:14:27.412268" level="INFO">POST Response : url=http://localhost:8000/employees/ 
+ status=201, reason=Created 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:27 GMT', 'server': 'uvicorn', 'content-length': '128', 'content-type': 'application/json'} 
+ body={"name":"Stephanie Lindsey","department":"Building control surveyor","position":"English as a foreign language teacher","id":51} 
+ </msg>
+<msg time="2025-04-03T13:14:27.412543" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/</arg>
+<arg>json=${employee_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.389746" elapsed="0.022878"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.412997" elapsed="0.000472"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-04-03T13:14:27.413626" elapsed="0.000104"/>
+</return>
+<msg time="2025-04-03T13:14:27.414857" level="INFO">${response} = {'name': 'Stephanie Lindsey', 'department': 'Building control surveyor', 'position': 'English as a foreign language teacher', 'id': 51}</msg>
+<var>${response}</var>
+<arg>${employee_data}</arg>
+<status status="PASS" start="2025-04-03T13:14:27.389026" elapsed="0.025924"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.416104" level="INFO">${employee_id} = 51</msg>
+<var>${employee_id}</var>
+<arg>${response}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.415639" elapsed="0.000542"/>
+</kw>
+<kw name="Delete Employee Via API">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:27.470633" level="INFO">DELETE Request : url=http://localhost:8000/employees/51 
+ path_url=/employees/51 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-04-03T13:14:27.470796" level="INFO">DELETE Response : url=http://localhost:8000/employees/51 
+ status=200, reason=OK 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:27 GMT', 'server': 'uvicorn', 'content-length': '43', 'content-type': 'application/json'} 
+ body={"message":"Employee deleted successfully"} 
+ </msg>
+<msg time="2025-04-03T13:14:27.471035" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/${employee_id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.417661" elapsed="0.053446"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.471463" elapsed="0.000469"/>
+</kw>
+<arg>${employee_id}</arg>
+<status status="PASS" start="2025-04-03T13:14:27.416874" elapsed="0.055246"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.472731" elapsed="0.206673"/>
+</kw>
+<kw name="Verify Employee Does Not Exist">
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:27.748442" level="INFO">Current page does not contain text 'Stephanie Lindsey'.</msg>
+<arg>${employee_name}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.681684" elapsed="0.066953"/>
+</kw>
+<arg>${employee_data}[name]</arg>
+<status status="PASS" start="2025-04-03T13:14:27.680326" elapsed="0.068558"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:27.381882" elapsed="0.367703"/>
+</test>
+<test id="s1-t6" name="Delete Multiple Employees" line="173">
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.753680" level="INFO">${name} = Kevin Taylor</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:27.752776" elapsed="0.001017"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.754917" level="INFO">${department} = Oceanographer</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:27.754351" elapsed="0.000734"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.756120" level="INFO">${position} = Educational psychologist</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:27.755541" elapsed="0.000680"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.757872" level="INFO">&amp;{employee} = { name=Kevin Taylor | department=Oceanographer | position=Educational psychologist }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.756694" elapsed="0.001275"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:27.758153" elapsed="0.000266"/>
+</return>
+<msg time="2025-04-03T13:14:27.758978" level="INFO">${employee_data1} = {'name': 'Kevin Taylor', 'department': 'Oceanographer', 'position': 'Educational psychologist'}</msg>
+<var>${employee_data1}</var>
+<status status="PASS" start="2025-04-03T13:14:27.752130" elapsed="0.006929"/>
+</kw>
+<kw name="Create Employee Via API">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:27.813186" level="INFO">POST Request : url=http://localhost:8000/employees/ 
+ path_url=/employees/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '95', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Kevin Taylor", "department": "Oceanographer", "position": "Educational psychologist"}' 
+ </msg>
+<msg time="2025-04-03T13:14:27.813379" level="INFO">POST Response : url=http://localhost:8000/employees/ 
+ status=201, reason=Created 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:27 GMT', 'server': 'uvicorn', 'content-length': '98', 'content-type': 'application/json'} 
+ body={"name":"Kevin Taylor","department":"Oceanographer","position":"Educational psychologist","id":51} 
+ </msg>
+<msg time="2025-04-03T13:14:27.813648" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/</arg>
+<arg>json=${employee_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.760670" elapsed="0.053039"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.814032" elapsed="0.000484"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-04-03T13:14:27.814705" elapsed="0.000207"/>
+</return>
+<msg time="2025-04-03T13:14:27.816354" level="INFO">${response1} = {'name': 'Kevin Taylor', 'department': 'Oceanographer', 'position': 'Educational psychologist', 'id': 51}</msg>
+<var>${response1}</var>
+<arg>${employee_data1}</arg>
+<status status="PASS" start="2025-04-03T13:14:27.759889" elapsed="0.056546"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.818030" level="INFO">${employee_id1} = 51</msg>
+<var>${employee_id1}</var>
+<arg>${response1}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.817215" elapsed="0.000939"/>
+</kw>
+<kw name="Generate Random Employee Data">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.820434" level="INFO">${name} = Joseph Huber</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-04-03T13:14:27.819588" elapsed="0.000952"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.821293" level="INFO">${department} = Academic librarian</msg>
+<var>${department}</var>
+<status status="PASS" start="2025-04-03T13:14:27.820842" elapsed="0.000639"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2025-04-03T13:14:27.823592" level="INFO">${position} = Osteopath</msg>
+<var>${position}</var>
+<status status="PASS" start="2025-04-03T13:14:27.822503" elapsed="0.001193"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.825252" level="INFO">&amp;{employee} = { name=Joseph Huber | department=Academic librarian | position=Osteopath }</msg>
+<var>&amp;{employee}</var>
+<arg>name=${name}</arg>
+<arg>department=${department}</arg>
+<arg>position=${position}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.824122" elapsed="0.001236"/>
+</kw>
+<return>
+<value>&amp;{employee}</value>
+<status status="PASS" start="2025-04-03T13:14:27.825558" elapsed="0.000103"/>
+</return>
+<msg time="2025-04-03T13:14:27.825955" level="INFO">${employee_data2} = {'name': 'Joseph Huber', 'department': 'Academic librarian', 'position': 'Osteopath'}</msg>
+<var>${employee_data2}</var>
+<status status="PASS" start="2025-04-03T13:14:27.818962" elapsed="0.007044"/>
+</kw>
+<kw name="Create Employee Via API">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:27.853786" level="INFO">POST Request : url=http://localhost:8000/employees/ 
+ path_url=/employees/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '85', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Joseph Huber", "department": "Academic librarian", "position": "Osteopath"}' 
+ </msg>
+<msg time="2025-04-03T13:14:27.854017" level="INFO">POST Response : url=http://localhost:8000/employees/ 
+ status=201, reason=Created 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:27 GMT', 'server': 'uvicorn', 'content-length': '88', 'content-type': 'application/json'} 
+ body={"name":"Joseph Huber","department":"Academic librarian","position":"Osteopath","id":52} 
+ </msg>
+<msg time="2025-04-03T13:14:27.854306" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/</arg>
+<arg>json=${employee_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.827512" elapsed="0.026868"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.854779" elapsed="0.000828"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-04-03T13:14:27.855914" elapsed="0.000163"/>
+</return>
+<msg time="2025-04-03T13:14:27.858397" level="INFO">${response2} = {'name': 'Joseph Huber', 'department': 'Academic librarian', 'position': 'Osteopath', 'id': 52}</msg>
+<var>${response2}</var>
+<arg>${employee_data2}</arg>
+<status status="PASS" start="2025-04-03T13:14:27.826735" elapsed="0.031781"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:27.859913" level="INFO">${employee_id2} = 52</msg>
+<var>${employee_id2}</var>
+<arg>${response2}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.859397" elapsed="0.000595"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:27.860955" level="INFO">Opening url 'http://localhost:8080'</msg>
+<arg>${FRONTEND_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-04-03T13:14:27.860610" elapsed="0.218554"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:employeeContainer</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:28.080054" elapsed="0.050913"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-03T13:14:30.133294" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-03T13:14:28.131902" elapsed="2.001755"/>
+</kw>
+<kw name="Select Multiple Employees">
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:30.138193" level="INFO">${checkbox_locator} = id:check-51</msg>
+<var>${checkbox_locator}</var>
+<arg>id:check-${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:30.137580" elapsed="0.002830"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:30.140860" elapsed="0.045682"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${checkbox_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-04-03T13:14:30.187088" elapsed="0.345710"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-03T13:14:31.033776" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-03T13:14:30.533028" elapsed="0.501110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:31.035609" level="INFO">Clicking element 'id:check-51'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:31.034769" elapsed="0.253093"/>
+</kw>
+<var name="${id}">51</var>
+<status status="PASS" start="2025-04-03T13:14:30.137193" elapsed="1.150845"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:31.289081" level="INFO">${checkbox_locator} = id:check-52</msg>
+<var>${checkbox_locator}</var>
+<arg>id:check-${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:31.288668" elapsed="0.000490"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:31.289434" elapsed="0.046692"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${checkbox_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-04-03T13:14:31.336558" elapsed="0.299399"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-03T13:14:32.137126" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-03T13:14:31.636362" elapsed="0.501125"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:32.139113" level="INFO">Clicking element 'id:check-52'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.138102" elapsed="0.178718"/>
+</kw>
+<var name="${id}">52</var>
+<status status="PASS" start="2025-04-03T13:14:31.288408" elapsed="1.028632"/>
+</iter>
+<var>${id}</var>
+<value>@{employee_ids}</value>
+<status status="PASS" start="2025-04-03T13:14:30.136613" elapsed="2.180578"/>
+</for>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:deleteSelectedBtn</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.317548" elapsed="0.094811"/>
+</kw>
+<arg>${employee_id1}</arg>
+<arg>${employee_id2}</arg>
+<status status="PASS" start="2025-04-03T13:14:30.135806" elapsed="2.277094"/>
+</kw>
+<kw name="Delete Selected Employees">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-03T13:14:32.415181" level="INFO">${delete_button} = id:deleteSelectedBtn</msg>
+<var>${delete_button}</var>
+<arg>id:deleteSelectedBtn</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.414912" elapsed="0.000342"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${delete_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.415628" elapsed="0.048904"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${delete_button}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.464967" elapsed="0.301983"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${delete_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.767261" elapsed="0.058725"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:32.827082" level="INFO">Clicking element 'id:deleteSelectedBtn'.</msg>
+<arg>${delete_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T13:14:32.826494" elapsed="0.178412"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:33.005574" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-04-03T13:14:33.005271" elapsed="0.010480"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-03T13:14:35.017601" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-03T13:14:33.016266" elapsed="2.001653"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:employeeContainer</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-03T13:14:35.018462" elapsed="0.026900"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:32.414204" elapsed="2.631538"/>
+</kw>
+<kw name="Verify Employee Does Not Exist">
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:35.103400" level="INFO">Current page does not contain text 'Kevin Taylor'.</msg>
+<arg>${employee_name}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-04-03T13:14:35.047929" elapsed="0.055628"/>
+</kw>
+<arg>${employee_data1}[name]</arg>
+<status status="PASS" start="2025-04-03T13:14:35.046777" elapsed="0.056976"/>
+</kw>
+<kw name="Verify Employee Does Not Exist">
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:35.150990" level="INFO">Current page does not contain text 'Joseph Huber'.</msg>
+<arg>${employee_name}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-04-03T13:14:35.105103" elapsed="0.046036"/>
+</kw>
+<arg>${employee_data2}[name]</arg>
+<status status="PASS" start="2025-04-03T13:14:35.104401" elapsed="0.046929"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Employee Via API">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:37.199300" level="INFO">GET Request : url=http://localhost:8000/employees/51 
+ path_url=/employees/51 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-04-03T13:14:37.199695" level="INFO">GET Response : url=http://localhost:8000/employees/51 
+ status=404, reason=Not Found 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:37 GMT', 'server': 'uvicorn', 'content-length': '31', 'content-type': 'application/json'} 
+ body={"detail":"Employee not found"} 
+ </msg>
+<msg time="2025-04-03T13:14:37.200546" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/${employee_id}</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:35.153038" elapsed="2.047667"/>
+</kw>
+<arg>${employee_id1}</arg>
+<status status="PASS" start="2025-04-03T13:14:35.152431" elapsed="2.048657"/>
+</kw>
+<arg>Get Employee Via API</arg>
+<arg>${employee_id1}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-04-03T13:14:35.151974" elapsed="2.049352"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Employee Via API">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-03T13:14:37.219575" level="INFO">GET Request : url=http://localhost:8000/employees/52 
+ path_url=/employees/52 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-04-03T13:14:37.219791" level="INFO">GET Response : url=http://localhost:8000/employees/52 
+ status=404, reason=Not Found 
+ headers={'date': 'Thu, 03 Apr 2025 07:44:37 GMT', 'server': 'uvicorn', 'content-length': '31', 'content-type': 'application/json'} 
+ body={"detail":"Employee not found"} 
+ </msg>
+<msg time="2025-04-03T13:14:37.220116" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>employee_api</arg>
+<arg>/employees/${employee_id}</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-03T13:14:37.205012" elapsed="0.015205"/>
+</kw>
+<arg>${employee_id2}</arg>
+<status status="PASS" start="2025-04-03T13:14:37.203698" elapsed="0.016829"/>
+</kw>
+<arg>Get Employee Via API</arg>
+<arg>${employee_id2}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-04-03T13:14:37.202671" elapsed="0.018052"/>
+</kw>
+<status status="PASS" start="2025-04-03T13:14:27.750954" elapsed="9.470543"/>
+</test>
+<test id="s1-t7" name="Verify Page Titles" line="200">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:37.224726" level="INFO">Opening url 'http://localhost:8080'</msg>
+<arg>${FRONTEND_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-04-03T13:14:37.224094" elapsed="0.223275"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.navbar-brand</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-03T13:14:37.448585" elapsed="0.075686"/>
+</kw>
+<kw name="Verify Page Title">
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-04-03T13:14:37.541468" level="INFO">${title} = Employee</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-04-03T13:14:37.525953" elapsed="0.015609"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2025-04-03T13:14:37.542498" level="FAIL">Employee != Employee System</msg>
+<arg>${title}</arg>
+<arg>Employee System</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2025-04-03T13:14:37.541902" elapsed="0.000970">Employee != Employee System</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css:.navbar-brand</arg>
+<arg>Employee System</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2025-04-03T13:14:37.543243" elapsed="0.000078"/>
+</kw>
+<status status="FAIL" start="2025-04-03T13:14:37.525021" elapsed="0.018591">Employee != Employee System</status>
+</kw>
+<status status="FAIL" start="2025-04-03T13:14:37.222971" elapsed="0.321349">Employee != Employee System</status>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-04-03T13:14:37.546669" elapsed="6.473805"/>
+</kw>
+<status status="FAIL" start="2025-04-03T13:14:12.715021" elapsed="31.305580"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Employee Tests" id="s1" pass="6" fail="1" skip="0">Employee Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
