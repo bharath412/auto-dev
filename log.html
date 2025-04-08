@@ -5,60 +5,16 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.2.2 (Python 3.13.2 on win32)" name="Generator">
+<meta content="Robot Framework 6.1.1 (Python 3.13.2 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
-<style media="all">
-:root {
-    --text-color: black;
-    --background-color: white;
-    --primary-color: #ddd;
-    --secondary-color: #ccc;
-    --link-color: #15c;
-    --link-hover-color: #61c;
-    --highlight-color: #eee;
-    --target-color: #f9f9f9;
-    --pass-color: #97bd61;
-    --fail-color: #ce3e01;
-    --warn-color: #fed84f;
-    --pass-link-color: #098a09;
-    --warn-link-color: #927201;
-    --fail-link-color: #ce3e01;
-    --ascending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    --descending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-    }
-}
-[data-theme="dark"] {
-    --text-color: #e2e1d7;
-    --background-color: #1c2227;
-    --primary-color: #26373b;
-    --secondary-color: #424f5a;
-    --link-color: #8cc4ff;
-    --link-hover-color: #bb86fc;
-    --highlight-color: #002b36;
-    --target-color: #1a252e;
-    --pass-link-color: #97bd61;
-    --warn-link-color: #fed84f;
-    --fail-link-color: #ff9b8f;
-    --ascending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAfn5+////f/cqYgAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
-    --descending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAA////fn5+K6jOaAAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
-}
+<style media="all" type="text/css">
 /* Generic and misc styles */
 body {
     font-family: Helvetica, sans-serif;
     font-size: 0.8em;
-    color: black; /* Fallback value */
-    color: var(--text-color);
+    color: black;
     padding: 6px;
-    background: white; /* Fallback value */
-    background: var(--background-color);
-    margin-left: 15px;
-}
-body[theme-toggled] {
-    transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
+    background: white;
 }
 table {
     table-layout: fixed;
@@ -73,37 +29,20 @@ br {
     mso-data-placement: same-cell; /* maintain line breaks in Excel */
 }
 hr {
-    background: #ccc; /* Fallback value */
-    background: var(--secondary-color);
+    background: #ccc;
     height: 1px;
     border: 0;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: #15c; /* Fallback value */
-    color: var(--link-color);
+    color: #15c;
 }
 a > img {
-    border-width: 1px !important;
-    border-style: solid !important;
-    border-color: #15c !important; /* Fallback value */
-    border-color: var(--link-color) !important;
+    border: 1px solid #15c !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: #61c; /* Fallback value */
-    color: var(--link-hover-color);
-}
-select {
-    background-color: white; /* Fallback value */
-    background-color: var(--background-color);
-    color: black; /* Fallback value */
-    color: var(--text-color);
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
-    border-radius: 4px;
+    color: #61c;
 }
 .parent-name {
     font-size: 0.7em;
@@ -116,7 +55,7 @@ select {
 #header {
     width: 65em;
     height: 3em;
-    margin: 20px 0 6px 0;
+    margin: 6px 0;
 }
 h1 {
     float: left;
@@ -144,17 +83,14 @@ h2 {
 }
 /* Status text colors -- !important allows using them in links */
 .fail {
-    color: #ce3e01 !important; /* Fallback value */
-    color: var(--fail-link-color) !important;
+    color: #ce3e01 !important;
     font-weight: bold;
 }
 .pass {
-    color: #098a09 !important; /* Fallback value */
-    color: var(--pass-link-color) !important;
+    color: #098a09 !important;
 }
 .skip {
-    color: #927201 !important; /* Fallback value */
-    color: var(--warn-link-color) !important;
+    color: #927201 !important;
     font-weight: bold;
 }
 .label {
@@ -162,10 +98,8 @@ h2 {
     font-size: 0.75em;
     letter-spacing: 1px;
     white-space: nowrap;
-    color: black; /* Fallback value */
-    color: var(--text-color);
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
+    color: black;
+    background-color: #ddd;
     border-radius: 3px;
 }
 .label.debug, .label.trace, .label.error, .label.keyword {
@@ -175,18 +109,15 @@ h2 {
     font-weight: bold;
 }
 .label.pass {
-    background-color: #97bd61; /* Fallback value */
-    background-color: var(--pass-color);
+    background-color: #97bd61;
     color: #000 !important;
 }
 .label.fail, .label.error {
-    background-color: #ce3e01; /* Fallback value */
-    background-color: var(--fail-color);
+    background-color: #ce3e01;
     color: #fff !important;
 }
 .label.skip, .label.warn {
-    background-color: #fed84f; /* Fallback value */
-    background-color: var(--warn-color);
+    background-color: #fed84f;
     color: #000 !important;
 }
 /* Top right header */
@@ -215,8 +146,7 @@ h2 {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: #ddd; /* Fallback value */
-    background: var(--primary-color);
+    background: #ddd;
 }
 /* Statistics table */
 .statistics {
@@ -226,20 +156,15 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #f4f4f4;
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    border: 1px solid #ccc;
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
+    background-color: #ddd;
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -275,33 +200,27 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    border: 1px solid #ccc;
     width: auto;
     height: 7px;
     padding: 0;
+    background: #aaa;
 }
 .empty-graph {
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #eee;
 }
 .pass-bar, .fail-bar, .skip-bar {
     float: left;
     height: 100%;
 }
 .fail-bar {
-    background: #ce3e01; /* Fallback value */
-    background: var(--fail-color);
+    background: #ce3e01;
 }
 .pass-bar {
-    background: #97bd61; /* Fallback value */
-    background: var(--pass-color);
+    background: #97bd61;
 }
 .skip-bar {
-    background: #fed84f; /* Fallback value */
-    background: var(--warn-color);
+    background: #fed84f;
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -311,84 +230,30 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--secondary-color);
+    background-color: #ccc;
 }
 .tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==); /* Fallback value */
-    background-image: var(--ascending-icon);
-    background-color: #ccc !important; /* Fallback value */
-    background-color: var(--secondary-color) !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
+    background-color: #ccc !important;
 }
 .tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==); /* Fallback value */
-    background-image: var(--descending-icon);
-    background-color: #ccc !important; /* Fallback value */
-    background-color: var(--secondary-color) !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
+    background-color: #ccc !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #ddd; /* Fallback value */
-    background-color: var(--primary-color);
-}
-#theme-toggle {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 28px;
-    height: 28px;
-    border: none;
-    padding: 4px;
-    z-index: 1000;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background: var(--highlight-color);
-}
-[data-theme="dark"] .dark-mode-icon,
-[data-theme="light"] .light-mode-icon {
-    display: none;
-}
-[data-theme="dark"] .light-mode-icon,
-[data-theme="light"] .dark-mode-icon {
-    display: block;
-}
-@keyframes highlight {
-    0% {
-        background: var(--primary-color)
-    }
-    100% {
-        background: var(--target-color);
-    }
-}
-:target {
-    background: var(--target-color);
-    transition: background 0.3s;
-    animation: highlight 4s;
+    background-color: #ddd;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 /* Icons are from Open Iconic <https://useiconic.com/open/>.
    Licensed under the MIT License. */
-:root {
-    --icon-filter: invert(0);
-    --icon-highlight: var(--secondary-color);
-    --elapsed-color: #666;
-}
-/* @media (prefers-color-scheme: dark) { */
-[data-theme="dark"] {
-    --icon-filter: invert(1);
-    --icon-highlight: #a39990;
-    --elapsed-color: #999;
-}
 /* Containers */
 .suite, .test, #errors {
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     padding: 0.3em 0.2em;
     margin: 0.2em 0;
 }
@@ -417,10 +282,8 @@ th.stats-col-graph:hover {
 }
 .element-header:hover {
     cursor: pointer;
-    background-color: #eee; /* Fallback value */
-    background-color: var(--highlight-color);
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+    background-color: #eee;
+    border-color: #ccc;
 }
 .element-header-toggle {
     position: absolute;
@@ -430,14 +293,10 @@ th.stats-col-graph:hover {
     background-position: center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAQAAABKxSfDAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0JChSkZz20AAAAGklEQVQI12NgQAKMDKzInP8IDhOqMk4G7AAANQwBE427PYUAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2Mmg4di0yaC04eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAzKSIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
     height: 10px;
     width: 10px;
     background-size: 6px 6px;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .closed > .element-header-toggle {
@@ -445,8 +304,7 @@ th.stats-col-graph:hover {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0zIDB2M2gtM3YyaDN2M2gydi0zaDN2LTJoLTN2LTNoLTJ6IiAvPgo8L3N2Zz4=), none;
 }
 .element-header:hover > .element-header-toggle {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
 }
 .element-header-right:hover ~ .element-header-toggle {
     background-color: transparent;
@@ -466,31 +324,23 @@ th.stats-col-graph:hover {
 }
 .name {
     font-weight: bold;
-    white-space: pre-wrap;
-}
-.arg, .assign {
-    white-space: pre-wrap;
 }
 .elapsed {
     float: right;
-    color: #666; /* Fallback value */
-    color: var(--elapsed-color);
+    color: #666;
     padding-left: 1em;
 }
 .link {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHlJREFUGJVtzrEJwmAQBtCn6ASuIKTIBhY2gmghBiJYB1udwk10B8FJbKMBcQFbtbkfJHrVwfu+4/idJR64Y9H7E3higj5O3S8Y44ApLnjhnXCNGhV2yNGggDJwiC02gavUbpDFvscRo4QdXOMKDHBufz3HLYKzNn4AbSkV3fncGQYAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik01Ljg4LjAzYy0uMTguMDEtLjM2LjAzLS41My4wOS0uMjcuMS0uNTMuMjUtLjc1LjQ3YS41LjUgMCAxIDAgLjY5LjY5Yy4xMS0uMTEuMjQtLjE3LjM4LS4yMi4zNS0uMTIuNzgtLjA3IDEuMDYuMjIuMzkuMzkuMzkgMS4wNCAwIDEuNDRsLTEuNSAxLjVjLS40NC40NC0uOC40OC0xLjA2LjQ3LS4yNi0uMDEtLjQxLS4xMy0uNDEtLjEzYS41LjUgMCAxIDAtLjUuODhzLjM0LjIyLjg0LjI1Yy41LjAzIDEuMi0uMTYgMS44MS0uNzhsMS41LTEuNWMuNzgtLjc4Ljc4LTIuMDQgMC0yLjgxLS4yOC0uMjgtLjYxLS40NS0uOTctLjUzLS4xOC0uMDQtLjM4LS4wNC0uNTYtLjAzem0tMiAyLjMxYy0uNS0uMDItMS4xOS4xNS0xLjc4Ljc1bC0xLjUgMS41Yy0uNzguNzgtLjc4IDIuMDQgMCAyLjgxLjU2LjU2IDEuMzYuNzIgMi4wNi40Ny4yNy0uMS41My0uMjUuNzUtLjQ3YS41LjUgMCAxIDAtLjY5LS42OWMtLjExLjExLS4yNC4xNy0uMzguMjItLjM1LjEyLS43OC4wNy0xLjA2LS4yMi0uMzktLjM5LS4zOS0xLjA0IDAtMS40NGwxLjUtMS41Yy40LS40Ljc1LS40NSAxLjAzLS40NC4yOC4wMS40Ny4wOS40Ny4wOWEuNS41IDAgMSAwIC40NC0uODhzLS4zNC0uMi0uODQtLjIyeiIKICAvPgo8L3N2Zz4=), none;
-    filter: var(--icon-filter);
 }
 .expand {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADtJREFUGJVjYCACKDAwMByA0ljFDjAwMPxnYGB4ABVQgLL/Q+VQBB6gseGmIivCkERXhFUSWRFOSawAAEl7E3uv1iMcAAAAAElFTkSuQmCC);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0xLjUgMGwtMS41IDEuNSA0IDQgNC00LTEuNS0xLjUtMi41IDIuNS0yLjUtMi41eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
 }
 .collapse {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAC5JREFUGJVjYCARNEAxTsn/UIyhCFkSQxG6ThQ+C5IpjWhG1yNb4YDFTdjEMAEACi8Q++9Y9TAAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik00IDBsLTQgNCAxLjUgMS41IDIuNS0yLjUgMi41IDIuNSAxLjUtMS41LTQtNHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIC8+Cjwvc3ZnPg==), none;
-    filter: var(--icon-filter);
 }
 .expand, .collapse, .link {
     float: left;
@@ -502,10 +352,7 @@ th.stats-col-graph:hover {
     background-size: 8px 8px;
     background-repeat: no-repeat;
     background-position: center;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .link {
@@ -515,8 +362,7 @@ th.stats-col-graph:hover {
     visibility: visible;
 }
 .expand:hover, .collapse:hover, .link:hover {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
 }
 /* Messages and errors */
 .messages .time, .messages .message {
@@ -557,16 +403,11 @@ th.stats-col-graph:hover {
 .message-row:hover .select-message div {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0MOzhWKZQOAAAASUlEQVQY032PsRHAIAwDX9BkicD+W8UMEqegAQJWKZ/+3sLZJhFGQEZzNaIa4ibh66En867VNaIeoP5WppNuIGoAlOm3g5VC1AdYeQv1BZPRSgAAAABJRU5ErkJggg==);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2MWg4di0xaC04em0wIDJ2MWg2di0xaC02em0wIDJ2MWg4di0xaC04em0wIDJ2MWg2di0xaC02eiIgLz4KPC9zdmc+), none;
-    filter: var(--icon-filter);
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--icon-highlight);
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .select-message:hover div {
-    background-color: #ccc; /* Fallback value */
-    background-color: var(--icon-highlight);
+    background-color: #ccc;
     cursor: pointer;
 }
 /* Message tables - these MUST NOT be combined together because otherwise
@@ -598,7 +439,7 @@ th.stats-col-graph:hover {
     cursor: default;
 }
 </style>
-<style media="print">
+<style media="print" type="text/css">
 body {
     background: white !important;
     padding: 0;
@@ -638,7 +479,7 @@ a:link, a:visited {
     background: #ddd !important;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 #javascript-disabled {
     width: 600px;
     margin: 100px auto 0 auto;
@@ -661,7 +502,7 @@ a:link, a:visited {
     font-style: italic;
 }
 </style>
-<style media="all">
+<style media="all" type="text/css">
 .doc > * {
     margin: 0.7em 1em 0.1em 1em;
     padding: 0;
@@ -673,12 +514,14 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
+    border: 1px solid #ccc;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
+    border: 1px solid #ccc;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -688,32 +531,24 @@ a:link, a:visited {
     letter-spacing: 0.1em;
 }
 .doc pre {
-    border-radius: 2px;
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #f4f4f4;
 }
 .doc code {
-    border-radius: 2px;
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #eee; /* Fallback value */
-    background: var(--highlight-color);
+    background: #eee;
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
-.doc img, .doc table, .doc table th, .doc table td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ccc; /* Fallback value */
-    border-color: var(--secondary-color);
+.doc img {
+    border: 1px solid #ccc;
 }
 .doc hr {
-    background: #ccc; /* Fallback value */
-    background: var(--secondary-color);
+    background: #ccc;
     height: 1px;
     border: 0;
 }
@@ -1015,6 +850,7 @@ window.model = (function () {
         suite.populateSuites = createIterablePopulator('Suite');
         suite.childrenNames = ['keyword', 'suite', 'test'];
         suite.callWhenChildrenReady = function (callable) { callable(); };
+        suite.message = data.message;
         suite.children = function () {
             return suite.keywords().concat(suite.tests()).concat(suite.suites());
         };
@@ -1105,7 +941,6 @@ window.model = (function () {
             name: data.name,
             doc: data.doc,
             status: data.status,
-            message: data.message,
             times: data.times,
             id: data.parent ? data.parent.id + '-' + data.id : data.id
         };
@@ -1126,6 +961,7 @@ window.model = (function () {
                 return test.keywords();
         };
         test.tags = data.tags;
+        test.message = data.message;
         test.matchesTagPattern = function (pattern) {
             return containsTagPattern(test.tags, pattern);
         };
@@ -1136,12 +972,13 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
+        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
         kw.template = 'keywordTemplate';
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =  ' : '');
+        kw.assign = data.assign + (data.assign ? ' =' : '');
         kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1252,48 +1089,58 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0)
+        if (total == 0) {
             return [0.0, 0.0, 0.0];
+        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1;
+            pass = 0.1
         if (fail > 0 && fail < 0.1)
-            fail = 0.1;
+            fail = 0.1
         if (skip > 0 && skip < 0.1)
-            skip = 0.1;
+            skip = 0.1
         if (pass > 99.95 && pass < 100)
-            pass = 99.9;
+            pass = 99.9
         if (fail > 99.95 && fail < 100)
-            fail = 99.9;
+            fail = 99.9
         if (skip > 99.95 && skip < 100)
-            skip = 99.9;
-        return [round1(pass), round1(skip), round1(fail)];
+            skip = 99.9
+        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1.0;
+            num1 = 1
         if (num2 > 0 && num2 < 1)
-            num2 = 1.0;
+            num2 = 1
         if (num3 > 0 && num3 < 1)
-            num3 = 1.0;
+            num3 = 1
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 >= num2 && num1 >= num3)
-                num1 = round1(num1 - 0.1);
-            else if (num2 >= num1 && num2 >= num3)
-                num2 = round1(num2 - 0.1);
-            else
-                num3 = round1(num3 - 0.1);
+            if (num1 > num2 && num1 > num3)
+                num1 -= 0.1;
+            else if (num2 > num1 && num2 > num3)
+                num2 -= 0.1;
+            else if (num3 > num1 && num3 > num2)
+                num3 -= 0.1;
+            else if (num1 > num3 && num1 == num2) {
+                num1 -= 0.1;
+                num2 -= 0.1;
+            }
+            else if (num1 > num2 && num1 == num3) {
+                num1 -= 0.1;
+                num3 -= 0.1;
+            }
+            else if (num2 > num1 && num2 == num3) {
+                num2 -= 0.1;
+                num3 -= 0.1;
+            }
         }
-        return [num1, num2, num3];
-    }
-    function round1(num) {
-        return Math.round(num*10) / 10;
+        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
     }
     return {
         Statistics: Statistics
@@ -1510,9 +1357,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
-                         'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1555,7 +1401,6 @@ window.testdata = function () {
         return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
-        var status = element[8];
         var kw = model.Keyword({
             parent: parent,
             type: KEYWORD_TYPES[element[0]],
@@ -1571,12 +1416,7 @@ window.testdata = function () {
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(status),
-            message: function () {
-                var msg = status.length == 4 ? strings.get(status[3]) : '';
-                this.message = function () { return msg; };
-                return msg;
-            },
+            status: parseStatus(element[8], strings),
             times: model.Times(times(element[8])),
             isChildrenLoaded: typeof(element[9]) !== 'number'
         });
@@ -1787,20 +1627,6 @@ window.testdata = function () {
 }();
 </script>
 <script type="text/javascript">
-const lightModeIcon = `
-<svg class="light-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-    viewBox="0 0 24 24" fill="var(--text-color)">
-    <rect fill="none" height="24" width="24" />
-    <path
-        d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" />
-</svg>`
-const darkModeIcon = `
-<svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-    viewBox="0 0 24 24" fill="var(--text-color)">
-    <rect fill="none" height="24" width="24" />
-    <path
-        d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z" />
-</svg>`
 function removeJavaScriptDisabledWarning() {
     // Not using jQuery here for maximum speed
     document.getElementById('javascript-disabled').style.display = 'none';
@@ -1836,10 +1662,6 @@ function setTitle(suiteName, type) {
 function addHeader() {
     var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
-           '<button id=theme-toggle>' +
-             lightModeIcon +
-             darkModeIcon +
-           '</button>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
              '<span id="generated-ago">${ago} ago</span>' +
@@ -1851,7 +1673,6 @@ function addHeader() {
         ago: util.createGeneratedAgoString(generated),
         title: document.title
     }).appendTo($('#header'));
-    document.getElementById('theme-toggle')?.addEventListener('click', theme.onClick);
 }
 function addReportOrLogLink(myType) {
     var url;
@@ -1980,116 +1801,30 @@ function stopPropagation(event) {
     if (event.stopPropagation)
         event.stopPropagation();
 }
-const theme = function () {
-    const storageKey = 'theme-preference';
-    const urlParams = new URLSearchParams(window.location.search);
-    var storage;
-    var theme;
-    function init(givenStorage) {
-        storage = givenStorage;
-        theme = { value: getPreference() };
-        document.body.setAttribute('data-theme', theme.value);
-        reflectPreference();
-        window.matchMedia('(prefers-color-scheme: dark)')
-            .addEventListener('change', ({matches:isDark}) => {
-                theme.value = isDark ? 'dark' : 'light';
-                setPreference();
-            });
-        window.addEventListener('storage', ({key, newValue}) => {
-            if (key === storage.fullKey(storageKey)) {
-                theme.value = newValue === 'dark' ? 'dark' : 'light';
-                setPreference();
-            }
-        });
-    }
-    function getPreference() {
-        if (urlParams.has('theme')) {
-            var urlTheme = urlParams.get('theme') === 'dark' ? 'dark' : 'light';
-            storage.set(storageKey, urlTheme);
-            urlParams.delete('theme');
-            return urlTheme;
-        }
-        if (storage.get(storageKey))
-            return storage.get(storageKey) === 'dark' ? 'dark' : 'light';
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    function setPreference() {
-        storage.set(storageKey, theme.value);
-        reflectPreference();
-    }
-    function reflectPreference() {
-        document.body.setAttribute('data-theme', theme.value);
-        document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
-        const event = new Event('theme-change', {value: theme.value});
-        document.dispatchEvent(event);
-    }
-    function onClick() {
-        theme.value = theme.value === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('theme-toggled', "");
-        setPreference();
-    }
-    return {init: init, getPreference: getPreference, setPreference: setPreference,
-        reflectPreference: reflectPreference, onClick: onClick};
-}();
-</script>
-<script type="text/javascript">
-storage = function () {
-    var prefix = 'robot-framework-';
-    var storage;
-    function init(user) {
-        if (user)
-            prefix += user + '-';
-        storage = getStorage();
-    }
-    function getStorage() {
-        // Use localStorage if it's accessible, normal object otherwise.
-        // Inspired by https://stackoverflow.com/questions/11214404
-        try {
-            localStorage.setItem(prefix, prefix);
-            localStorage.removeItem(prefix);
-            return localStorage;
-        } catch (exception) {
-            return {};
-        }
-    }
-    function get(key, defaultValue) {
-        var value = storage[fullKey(key)];
-        if (typeof value === 'undefined')
-            return defaultValue;
-        return value;
-    }
-    function set(key, value) {
-        storage[fullKey(key)] = value;
-    }
-    function fullKey(key) {
-        return prefix + key;
-    }
-    return {init: init, get: get, set: set, fullKey: fullKey};
-}();
 </script>
 <script type="text/javascript">
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,37089],[],[[4,0,0,[],[1,8184,2100],[[0,5,0,0,0,0,6,0,[1,8186,8],[[0,7,8,0,9,0,10,0,[1,8187,2],[[8188,2,11]]],[0,12,8,0,0,0,13,0,[1,8189,1],[[8189,2,14]]],[0,12,8,0,0,0,15,0,[1,8190,1],[[8190,2,16]]],[0,17,18,0,19,20,21,0,[1,8191,2],[[8193,2,22]]],[8,0,0,0,0,21,0,0,[1,8193,0],[]],[8194,2,23]]],[0,24,0,0,0,6,25,0,[1,8195,2083],[[0,26,27,0,28,29,25,0,[1,8196,2078],[[10273,2,30],[10273,2,31],[10273,2,32]]],[0,33,27,0,34,35,0,0,[1,10274,1],[]],[8,0,0,0,0,36,0,0,[1,10275,0],[]],[10278,2,37]]],[0,38,18,0,39,40,41,0,[1,10279,1],[[10279,2,42]]],[0,43,18,0,44,41,0,0,[1,10280,1],[[10281,2,45]]],[0,46,18,0,47,48,0,0,[1,10281,1],[]],[0,46,18,0,47,49,0,0,[1,10282,1],[]],[0,46,18,0,47,50,0,0,[1,10283,1],[]]]],[51,0,0,[],[1,10285,2620],[[0,5,0,0,0,0,6,0,[1,10286,6],[[0,7,8,0,9,0,10,0,[1,10287,1],[[10288,2,52]]],[0,12,8,0,0,0,13,0,[1,10288,1],[[10289,2,53]]],[0,12,8,0,0,0,15,0,[1,10289,0],[[10290,2,54]]],[0,17,18,0,19,20,21,0,[1,10290,1],[[10291,2,55]]],[8,0,0,0,0,21,0,0,[1,10292,0],[]],[10292,2,56]]],[0,57,0,0,0,6,0,0,[1,10292,2523],[[0,58,59,0,60,61,0,0,[1,10293,207],[[10293,2,62]]],[0,63,59,0,64,65,0,0,[1,10500,390],[]],[0,66,59,0,67,68,0,0,[1,10891,313],[[10891,2,69]]],[0,66,59,0,67,70,0,0,[1,11204,221],[[11204,2,71]]],[0,66,59,0,67,72,0,0,[1,11426,321],[[11426,2,73]]],[0,58,59,0,60,74,0,0,[1,11748,179],[[11751,2,75]]],[0,76,59,0,77,78,0,0,[1,11928,887],[]]]],[0,79,0,0,0,78,0,0,[1,12817,88],[[0,80,59,0,81,82,0,0,[1,12819,85],[[12904,2,83]]]]]]],[84,0,0,[],[1,12906,3945],[[0,5,0,0,0,0,6,0,[1,12907,7],[[0,7,8,0,9,0,10,0,[1,12908,1],[[12909,2,85]]],[0,12,8,0,0,0,13,0,[1,12910,1],[[12910,2,86]]],[0,12,8,0,0,0,15,0,[1,12911,1],[[12911,2,87]]],[0,17,18,0,19,20,21,0,[1,12912,1],[[12913,2,88]]],[8,0,0,0,0,21,0,0,[1,12914,0],[]],[12915,2,89]]],[0,57,0,0,0,6,0,0,[1,12915,2322],[[0,58,59,0,60,61,0,0,[1,12918,124],[[12918,2,62]]],[0,63,59,0,64,65,0,0,[1,13042,386],[]],[0,66,59,0,67,68,0,0,[1,13429,394],[[13431,2,90]]],[0,66,59,0,67,70,0,0,[1,13824,234],[[13824,2,91]]],[0,66,59,0,67,72,0,0,[1,14058,289],[[14059,2,92]]],[0,58,59,0,60,74,0,0,[1,14348,149],[[14349,2,75]]],[0,76,59,0,77,78,0,0,[1,14498,738],[]]]],[0,84,0,0,0,78,0,0,[1,15238,1580],[[0,66,59,0,67,93,0,0,[1,15241,571],[[15245,2,94]]],[0,95,18,0,96,97,0,0,[1,15814,1003],[[16817,2,98]]]]],[0,79,0,0,0,78,0,0,[1,16818,32],[[0,80,59,0,81,82,0,0,[1,16819,31],[[16850,2,99]]]]]]],[100,0,0,[],[1,16851,2109],[[0,5,0,0,0,0,6,0,[1,16852,10],[[0,7,8,0,9,0,10,0,[1,16853,2],[[16855,2,101]]],[0,12,8,0,0,0,13,0,[1,16856,1],[[16857,2,102]]],[0,12,8,0,0,0,15,0,[1,16857,1],[[16858,2,103]]],[0,17,18,0,19,20,21,0,[1,16859,2],[[16860,2,104]]],[8,0,0,0,0,21,0,0,[1,16861,0],[]],[16862,2,105]]],[0,24,0,0,0,6,25,0,[1,16863,2051],[[0,26,27,0,28,29,25,0,[1,16865,2046],[[18910,2,106],[18911,2,107],[18911,2,32]]],[0,33,27,0,34,35,0,0,[1,18911,1],[]],[8,0,0,0,0,36,0,0,[1,18912,0],[]],[18914,2,108]]],[0,109,18,0,110,40,111,0,[1,18915,1],[[18916,2,112]]],[0,5,0,0,0,0,113,0,[1,18917,8],[[0,7,8,0,9,0,10,0,[1,18917,1],[[18919,2,114]]],[0,12,8,0,0,0,13,0,[1,18919,1],[[18920,2,115]]],[0,12,8,0,0,0,15,0,[1,18920,1],[[18921,2,116]]],[0,17,18,0,19,20,21,0,[1,18922,2],[[18923,2,117]]],[8,0,0,0,0,21,0,0,[1,18924,0],[]],[18924,2,118]]],[0,119,0,0,0,120,121,0,[1,18925,32],[[0,122,27,0,123,124,25,0,[1,18926,28],[[18954,2,125],[18954,2,126],[18954,2,127]]],[0,33,27,0,34,128,0,0,[1,18955,1],[]],[8,0,0,0,0,36,0,0,[1,18956,0],[]],[18957,2,129]]],[0,130,18,0,131,132,0,0,[1,18958,1],[]]]],[133,0,0,[],[1,18961,901],[[0,5,0,0,0,0,6,0,[1,18962,18],[[0,7,8,0,9,0,10,0,[1,18964,2],[[18966,2,134]]],[0,12,8,0,0,0,13,0,[1,18966,2],[[18967,2,135]]],[0,12,8,0,0,0,15,0,[1,18972,2],[[18973,2,136]]],[0,17,18,0,19,20,21,0,[1,18974,3],[[18976,2,137]]],[8,0,0,0,0,21,0,0,[1,18979,0],[]],[18980,2,138]]],[0,24,0,0,0,6,25,0,[1,18982,36],[[0,26,27,0,28,29,25,0,[1,18985,30],[[19014,2,139],[19014,2,140],[19015,2,32]]],[0,33,27,0,34,35,0,0,[1,19015,1],[]],[8,0,0,0,0,36,0,0,[1,19016,0],[]],[19018,2,141]]],[0,109,18,0,110,40,111,0,[1,19018,1],[[19019,2,142]]],[0,143,0,0,0,111,0,0,[1,19020,23],[[0,144,27,0,145,146,25,0,[1,19021,21],[[19040,2,147],[19041,2,148],[19041,2,127]]],[0,33,27,0,34,128,0,0,[1,19042,1],[]]]],[0,149,59,0,150,0,0,0,[1,19043,642],[]],[0,151,0,0,0,78,0,0,[1,19686,176],[[0,152,59,0,153,82,0,0,[1,19687,175],[[19861,2,154]]]]]]],[155,0,0,[],[1,19863,9678],[[0,5,0,0,0,0,156,0,[1,19864,5],[[0,7,8,0,9,0,10,0,[1,19864,1],[[19865,2,157]]],[0,12,8,0,0,0,13,0,[1,19865,0],[[19866,2,158]]],[0,12,8,0,0,0,15,0,[1,19866,1],[[19867,2,159]]],[0,17,18,0,19,20,21,0,[1,19867,1],[[19868,2,160]]],[8,0,0,0,0,21,0,0,[1,19868,0],[]],[19869,2,161]]],[0,24,0,0,0,156,162,0,[1,19869,28],[[0,26,27,0,28,29,25,0,[1,19870,23],[[19892,2,163],[19892,2,164],[19893,2,32]]],[0,33,27,0,34,35,0,0,[1,19894,1],[]],[8,0,0,0,0,36,0,0,[1,19895,0],[]],[19897,2,165]]],[0,109,18,0,110,166,167,0,[1,19898,1],[[19898,2,168]]],[0,5,0,0,0,0,169,0,[1,19899,13],[[0,7,8,0,9,0,10,0,[1,19901,2],[[19902,2,170]]],[0,12,8,0,0,0,13,0,[1,19903,1],[[19904,2,171]]],[0,12,8,0,0,0,15,0,[1,19905,1],[[19906,2,172]]],[0,17,18,0,19,20,21,0,[1,19906,3],[[19909,2,173]]],[8,0,0,0,0,21,0,0,[1,19910,0],[]],[19912,2,174]]],[0,24,0,0,0,169,175,0,[1,19913,35],[[0,26,27,0,28,29,25,0,[1,19915,30],[[19943,2,176],[19944,2,177],[19944,2,32]]],[0,33,27,0,34,35,0,0,[1,19945,1],[]],[8,0,0,0,0,36,0,0,[1,19945,0],[]],[19948,2,178]]],[0,109,18,0,110,179,180,0,[1,19949,1],[[19949,2,181]]],[0,182,59,0,183,184,0,0,[1,19950,727],[[19951,2,185]]],[0,63,59,0,64,186,0,0,[1,20677,98],[]],[0,95,18,0,96,187,0,0,[1,20776,2002],[[22778,2,188]]],[0,189,0,0,0,190,0,0,[1,22779,2042],[[3,191,0,0,0,0,0,0,[1,22780,1978],[[4,192,0,0,0,0,0,0,[1,22780,993],[[0,109,18,0,110,193,194,0,[1,22781,4],[[22781,2,195]]],[0,63,59,0,64,194,0,0,[1,22785,44],[]],[0,196,59,0,197,194,0,0,[1,22829,305],[]],[0,95,18,0,96,198,0,0,[1,23136,501],[[23637,2,199]]],[0,58,59,0,60,194,0,0,[1,23637,135],[[23638,2,200]]]]],[4,201,0,0,0,0,0,0,[1,23773,984],[[0,109,18,0,110,193,194,0,[1,23774,1],[[23774,2,202]]],[0,63,59,0,64,194,0,0,[1,23775,46],[]],[0,196,59,0,197,194,0,0,[1,23821,292],[]],[0,95,18,0,96,198,0,0,[1,24113,501],[[24614,2,199]]],[0,58,59,0,60,194,0,0,[1,24614,142],[[24615,2,203]]]]]]],[0,204,59,0,205,206,0,0,[1,24758,62],[]]]],[0,207,0,0,0,0,0,0,[1,24821,2587],[[0,109,18,0,110,206,208,0,[1,24822,1],[[24822,2,209]]],[0,63,59,0,64,208,0,0,[1,24823,30],[]],[0,196,59,0,197,208,0,0,[1,24853,300],[]],[0,204,59,0,205,208,0,0,[1,25153,67],[]],[0,58,59,0,60,208,0,0,[1,25220,155],[[25221,2,210]]],[0,211,59,0,212,213,0,0,[1,25376,11],[[25377,2,214]]],[0,95,18,0,96,187,0,0,[1,25388,2001],[[27389,2,188]]],[0,215,59,0,216,186,0,0,[1,27389,18],[]]]],[0,151,0,0,0,217,0,0,[1,27408,43],[[0,152,59,0,153,82,0,0,[1,27409,43],[[27451,2,218]]]]],[0,151,0,0,0,219,0,0,[1,27452,47],[[0,152,59,0,153,82,0,0,[1,27453,46],[[27498,2,220]]]]],[0,221,18,0,222,223,0,0,[1,27499,2021],[[0,224,0,0,0,167,0,0,[1,27500,2020],[[0,225,27,0,226,227,25,0,[1,27500,2019],[[29518,2,228],[29519,2,229],[29519,2,230]]]]]]],[0,221,18,0,222,231,0,0,[1,29521,19],[[0,224,0,0,0,180,0,0,[1,29522,18],[[0,225,27,0,226,227,25,0,[1,29523,16],[[29538,2,232],[29538,2,233],[29539,2,230]]]]]]]]],[234,0,0,[],[1,29543,570],[[0,182,59,0,183,184,0,0,[1,29545,429],[[29546,2,185]]],[0,63,59,0,64,235,0,0,[1,29974,67],[]],[0,236,0,0,0,0,0,0,[1,30041,71],[[0,237,59,0,238,0,239,0,[1,30042,12],[[30054,2,240]]],[0,130,18,0,131,241,0,0,[1,30055,1],[]],[0,242,59,0,243,244,0,0,[1,30056,56],[[30056,2,245]]]]]]]],[[1,246,0,0,0,0,0,0,[1,3825,4359],[[0,247,27,0,248,249,0,0,[1,3830,1],[[3831,2,250]]],[0,251,59,0,252,253,0,0,[1,3832,4177],[[3833,2,254],[3851,2,255]]],[0,256,59,0,257,0,0,0,[1,8013,171],[]]]],[2,258,59,0,259,0,0,0,[1,30113,6975],[]]],[7,7,0,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,31798],[],[[4,0,0,[],[1,5402,2144],[[0,5,0,0,0,0,6,0,[1,5405,11],[[0,7,8,0,9,0,10,0,[1,5406,3],[[5409,2,11]]],[0,12,8,0,0,0,13,0,[1,5409,1],[[5410,2,14]]],[0,12,8,0,0,0,15,0,[1,5410,1],[[5411,2,16]]],[0,17,18,0,19,20,21,0,[1,5411,3],[[5414,2,22]]],[8,0,0,0,0,21,0,0,[1,5415,0],[]],[5416,2,23]]],[0,24,0,0,0,6,25,0,[1,5416,2125],[[0,26,27,0,28,29,25,0,[1,5417,2121],[[7537,2,30],[7537,2,31],[7538,2,32]]],[0,33,27,0,34,35,0,0,[1,7538,1],[]],[8,0,0,0,0,36,0,0,[1,7539,0],[]],[7541,2,37]]],[0,38,18,0,39,40,41,0,[1,7542,0],[[7542,2,42]]],[0,43,18,0,44,41,0,0,[1,7543,0],[[7543,2,45]]],[0,46,18,0,47,48,0,0,[1,7544,0],[]],[0,46,18,0,47,49,0,0,[1,7545,0],[]],[0,46,18,0,47,50,0,0,[1,7546,0],[]]]],[51,0,0,[],[1,7547,2134],[[0,5,0,0,0,0,6,0,[1,7548,7],[[0,7,8,0,9,0,10,0,[1,7549,1],[[7550,2,52]]],[0,12,8,0,0,0,13,0,[1,7551,0],[[7551,2,53]]],[0,12,8,0,0,0,15,0,[1,7551,1],[[7552,2,54]]],[0,17,18,0,19,20,21,0,[1,7552,2],[[7554,2,55]]],[8,0,0,0,0,21,0,0,[1,7554,0],[]],[7555,2,56]]],[0,57,0,0,0,6,0,0,[1,7555,2088],[[0,58,59,0,60,61,0,0,[1,7556,188],[[7558,2,62]]],[0,63,59,0,64,65,0,0,[1,7744,432],[]],[0,66,59,0,67,68,0,0,[1,8176,242],[[8179,2,69]]],[0,66,59,0,67,70,0,0,[1,8419,310],[[8420,2,71]]],[0,66,59,0,67,72,0,0,[1,8729,236],[[8731,2,73]]],[0,58,59,0,60,74,0,0,[1,8966,127],[[8967,2,75]]],[0,76,59,0,77,78,0,0,[1,9093,550],[]]]],[0,79,0,0,0,78,0,0,[1,9644,36],[[0,80,59,0,81,82,0,0,[1,9645,35],[[9680,2,83]]]]]]],[84,0,0,[],[1,9683,3194],[[0,5,0,0,0,0,6,0,[1,9683,7],[[0,7,8,0,9,0,10,0,[1,9684,1],[[9685,2,85]]],[0,12,8,0,0,0,13,0,[1,9686,0],[[9686,2,86]]],[0,12,8,0,0,0,15,0,[1,9687,0],[[9687,2,87]]],[0,17,18,0,19,20,21,0,[1,9687,2],[[9689,2,88]]],[8,0,0,0,0,21,0,0,[1,9689,0],[]],[9690,2,89]]],[0,57,0,0,0,6,0,0,[1,9690,1808],[[0,58,59,0,60,61,0,0,[1,9690,203],[[9691,2,62]]],[0,63,59,0,64,65,0,0,[1,9893,299],[]],[0,66,59,0,67,68,0,0,[1,10192,287],[[10192,2,90]]],[0,66,59,0,67,70,0,0,[1,10479,187],[[10481,2,91]]],[0,66,59,0,67,72,0,0,[1,10666,245],[[10667,2,92]]],[0,58,59,0,60,74,0,0,[1,10911,155],[[10912,2,75]]],[0,76,59,0,77,78,0,0,[1,11067,431],[]]]],[0,84,0,0,0,78,0,0,[1,11498,1324],[[0,66,59,0,67,93,0,0,[1,11499,321],[[11501,2,94]]],[0,95,18,0,96,97,0,0,[1,11820,1002],[[12821,2,98]]]]],[0,79,0,0,0,78,0,0,[1,12822,55],[[0,80,59,0,81,82,0,0,[1,12823,53],[[12876,2,99]]]]]]],[100,0,0,[],[1,12877,2158],[[0,5,0,0,0,0,6,0,[1,12878,2],[[0,7,8,0,9,0,10,0,[1,12878,0],[[12878,2,101]]],[0,12,8,0,0,0,13,0,[1,12878,1],[[12879,2,102]]],[0,12,8,0,0,0,15,0,[1,12879,0],[[12879,2,103]]],[0,17,18,0,19,20,21,0,[1,12879,1],[[12880,2,104]]],[8,0,0,0,0,21,0,0,[1,12880,0],[]],[12880,2,105]]],[0,24,0,0,0,6,25,0,[1,12880,2123],[[0,26,27,0,28,29,25,0,[1,12880,2122],[[15002,2,106],[15002,2,107],[15002,2,32]]],[0,33,27,0,34,35,0,0,[1,15002,1],[]],[8,0,0,0,0,36,0,0,[1,15003,0],[]],[15003,2,108]]],[0,109,18,0,110,40,111,0,[1,15004,0],[[15004,2,112]]],[0,5,0,0,0,0,113,0,[1,15004,2],[[0,7,8,0,9,0,10,0,[1,15004,1],[[15005,2,114]]],[0,12,8,0,0,0,13,0,[1,15005,0],[[15005,2,115]]],[0,12,8,0,0,0,15,0,[1,15005,0],[[15005,2,116]]],[0,17,18,0,19,20,21,0,[1,15005,1],[[15006,2,117]]],[8,0,0,0,0,21,0,0,[1,15006,0],[]],[15006,2,118]]],[0,119,0,0,0,120,121,0,[1,15006,28],[[0,122,27,0,123,124,25,0,[1,15007,25],[[15032,2,125],[15032,2,126],[15032,2,127]]],[0,33,27,0,34,128,0,0,[1,15033,0],[]],[8,0,0,0,0,36,0,0,[1,15033,0],[]],[15034,2,129]]],[0,130,18,0,131,132,0,0,[1,15034,1],[]]]],[133,0,0,[],[1,15036,480],[[0,5,0,0,0,0,6,0,[1,15036,3],[[0,7,8,0,9,0,10,0,[1,15036,1],[[15037,2,134]]],[0,12,8,0,0,0,13,0,[1,15037,1],[[15038,2,135]]],[0,12,8,0,0,0,15,0,[1,15038,0],[[15038,2,136]]],[0,17,18,0,19,20,21,0,[1,15038,1],[[15039,2,137]]],[8,0,0,0,0,21,0,0,[1,15039,0],[]],[15039,2,138]]],[0,24,0,0,0,6,25,0,[1,15040,21],[[0,26,27,0,28,29,25,0,[1,15040,19],[[15059,2,139],[15059,2,140],[15059,2,32]]],[0,33,27,0,34,35,0,0,[1,15060,0],[]],[8,0,0,0,0,36,0,0,[1,15060,0],[]],[15061,2,141]]],[0,109,18,0,110,40,111,0,[1,15061,1],[[15062,2,142]]],[0,143,0,0,0,111,0,0,[1,15062,21],[[0,144,27,0,145,146,25,0,[1,15062,21],[[15082,2,147],[15083,2,148],[15083,2,127]]],[0,33,27,0,34,128,0,0,[1,15083,0],[]]]],[0,149,59,0,150,0,0,0,[1,15084,359],[]],[0,151,0,0,0,78,0,0,[1,15443,73],[[0,152,59,0,153,82,0,0,[1,15444,72],[[15515,2,154]]]]]]],[155,0,0,[],[1,15516,9409],[[0,5,0,0,0,0,156,0,[1,15517,4],[[0,7,8,0,9,0,10,0,[1,15517,2],[[15518,2,157]]],[0,12,8,0,0,0,13,0,[1,15519,0],[[15519,2,158]]],[0,12,8,0,0,0,15,0,[1,15519,0],[[15519,2,159]]],[0,17,18,0,19,20,21,0,[1,15520,0],[[15520,2,160]]],[8,0,0,0,0,21,0,0,[1,15520,0],[]],[15521,2,161]]],[0,24,0,0,0,156,162,0,[1,15521,52],[[0,26,27,0,28,29,25,0,[1,15521,51],[[15571,2,163],[15571,2,164],[15572,2,32]]],[0,33,27,0,34,35,0,0,[1,15572,0],[]],[8,0,0,0,0,36,0,0,[1,15572,0],[]],[15573,2,165]]],[0,109,18,0,110,166,167,0,[1,15574,0],[[15574,2,168]]],[0,5,0,0,0,0,169,0,[1,15574,3],[[0,7,8,0,9,0,10,0,[1,15574,1],[[15575,2,170]]],[0,12,8,0,0,0,13,0,[1,15575,1],[[15576,2,171]]],[0,12,8,0,0,0,15,0,[1,15576,0],[[15576,2,172]]],[0,17,18,0,19,20,21,0,[1,15576,1],[[15577,2,173]]],[8,0,0,0,0,21,0,0,[1,15577,0],[]],[15577,2,174]]],[0,24,0,0,0,169,175,0,[1,15578,27],[[0,26,27,0,28,29,25,0,[1,15578,25],[[15603,2,176],[15603,2,177],[15603,2,32]]],[0,33,27,0,34,35,0,0,[1,15604,0],[]],[8,0,0,0,0,36,0,0,[1,15604,0],[]],[15605,2,178]]],[0,109,18,0,110,179,180,0,[1,15606,0],[[15606,2,181]]],[0,182,59,0,183,184,0,0,[1,15606,320],[[15606,2,185]]],[0,63,59,0,64,186,0,0,[1,15926,63],[]],[0,95,18,0,96,187,0,0,[1,15990,2001],[[17991,2,188]]],[0,189,0,0,0,190,0,0,[1,17991,2130],[[3,191,0,0,0,0,0,0,[1,17992,2068],[[4,192,0,0,0,0,0,0,[1,17993,1052],[[0,109,18,0,110,193,194,0,[1,17993,1],[[17994,2,195]]],[0,63,59,0,64,194,0,0,[1,17994,76],[]],[0,196,59,0,197,194,0,0,[1,18070,316],[]],[0,95,18,0,96,198,0,0,[1,18386,501],[[18887,2,199]]],[0,58,59,0,60,194,0,0,[1,18888,157],[[18889,2,200]]]]],[4,201,0,0,0,0,0,0,[1,19045,1015],[[0,109,18,0,110,193,194,0,[1,19045,1],[[19046,2,202]]],[0,63,59,0,64,194,0,0,[1,19046,41],[]],[0,196,59,0,197,194,0,0,[1,19087,300],[]],[0,95,18,0,96,198,0,0,[1,19388,501],[[19888,2,199]]],[0,58,59,0,60,194,0,0,[1,19889,171],[[19890,2,203]]]]]]],[0,204,59,0,205,206,0,0,[1,20060,61],[]]]],[0,207,0,0,0,0,0,0,[1,20121,2636],[[0,109,18,0,110,206,208,0,[1,20122,0],[[20122,2,209]]],[0,63,59,0,64,208,0,0,[1,20122,35],[]],[0,196,59,0,197,208,0,0,[1,20157,313],[]],[0,204,59,0,205,208,0,0,[1,20470,98],[]],[0,58,59,0,60,208,0,0,[1,20568,148],[[20569,2,210]]],[0,211,59,0,212,213,0,0,[1,20716,9],[[20716,2,214]]],[0,95,18,0,96,187,0,0,[1,20725,2002],[[22727,2,188]]],[0,215,59,0,216,186,0,0,[1,22727,30],[]]]],[0,151,0,0,0,217,0,0,[1,22758,72],[[0,152,59,0,153,82,0,0,[1,22759,71],[[22830,2,218]]]]],[0,151,0,0,0,219,0,0,[1,22830,43],[[0,152,59,0,153,82,0,0,[1,22831,42],[[22873,2,220]]]]],[0,221,18,0,222,223,0,0,[1,22874,2043],[[0,224,0,0,0,167,0,0,[1,22874,2043],[[0,225,27,0,226,227,25,0,[1,22874,2042],[[24916,2,228],[24916,2,229],[24916,2,230]]]]]]],[0,221,18,0,222,231,0,0,[1,24917,8],[[0,224,0,0,0,180,0,0,[1,24917,8],[[0,225,27,0,226,227,25,0,[1,24918,7],[[24925,2,232],[24925,2,233],[24925,2,230]]]]]]]]],[234,0,0,[],[1,24926,438],[[0,182,59,0,183,184,0,0,[1,24926,322],[[24927,2,185]]],[0,63,59,0,64,235,0,0,[1,25248,53],[]],[0,236,0,0,0,0,0,0,[1,25301,63],[[0,237,59,0,238,0,239,0,[1,25301,13],[[25314,2,240]]],[0,130,18,0,131,241,0,0,[1,25314,0],[]],[0,242,59,0,243,244,0,0,[1,25314,50],[[25316,2,245]]]]]]]],[[1,246,0,0,0,0,0,0,[1,1876,3526],[[0,247,27,0,248,249,0,0,[1,1877,0],[[1877,2,250]]],[0,251,59,0,252,253,0,0,[1,1878,3421],[[1878,2,254]]],[0,255,59,0,256,0,0,0,[1,5299,103],[]]]],[2,257,59,0,258,0,0,0,[1,25365,6433],[]]],[7,7,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Employee Tests","*E:\\ERP\\dev\\CursorAI\\auto-dev\\employee_tests.robot","*employee_tests.robot","*Create New Employee Via API","*Generate Random Employee Data","*${employee_data}","*Name","*FakerLibrary","*<p>:example: 'John Doe'\x3c/p>","*${name}","*${name} = Timothy Williams","*Job","*${department}","*${department} = Physiological scientist","*${position}","*${position} = Health and safety inspector","*Create Dictionary","*BuiltIn","*<p>Creates and returns a dictionary based on the given <code>items\x3c/code>.\x3c/p>","*name=${name}    department=${department}    position=${position}","*&amp;{employee}","*&amp;{employee} = { name=Timothy Williams | department=Physiological scientist | position=Health and safety inspector }","*${employee_data} = {'name': 'Timothy Williams', 'department': 'Physiological scientist', 'position': 'Health and safety inspector'}","*Create Employee Via API","*${response}","*POST On Session","*RequestsLibrary","*<p>Sends a POST request on a previously created HTTP Session.\x3c/p>","*employee_api    /employees/    json=${employee_data}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '112', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Timothy Williams\", \"department\": \"Physiological scientist\", \"position\": \"Health and safety inspector\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Fri, 04 Apr 2025 08:34:19 GMT', 'server': 'uvicorn', 'content-length': '115', 'content-type': 'application/json'} \n body={\"name\":\"Timothy Williams\",\"department\":\"Physiological scientist\",\"position\":\"Health and safety inspector\",\"id\":79} \n ","*${response} = &lt;Response [201]&gt;","*Status Should Be","*<p>Fails if response status code is different than the expected.\x3c/p>","*201    ${response}","*${response.json()}","*${response} = {'name': 'Timothy Williams', 'department': 'Physiological scientist', 'position': 'Health and safety inspector', 'id': 79}","*Convert To String","*<p>Converts the given item to a Unicode string.\x3c/p>","*${response}[id]","*${id_str}","*${id_str} = 79","*Should Not Be Empty","*<p>Verifies that the given item is not empty.\x3c/p>","*Length is 2.","*Should Be Equal As Strings","*<p>Fails if objects are unequal after converting them to strings.\x3c/p>","*${response}[name]    ${employee_data}[name]","*${response}[department]    ${employee_data}[department]","*${response}[position]    ${employee_data}[position]","*Create New Employee Via UI","*${name} = Chelsea Williams","*${department} = Office manager","*${position} = Psychotherapist, child","*&amp;{employee} = { name=Chelsea Williams | department=Office manager | position=Psychotherapist, child }","*${employee_data} = {'name': 'Chelsea Williams', 'department': 'Office manager', 'position': 'Psychotherapist, child'}","*Create Employee Via UI","*Click Element","*SeleniumLibrary","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${ADD_EMPLOYEE_BTN}","*Clicking element 'css:button[onclick='showAddModal()']'.","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${NAME_INPUT}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${NAME_INPUT}    ${employee_data}[name]","*Typing text 'Chelsea Williams' into text field 'id:name'.","*${DEPARTMENT_INPUT}    ${employee_data}[department]","*Typing text 'Office manager' into text field 'id:department'.","*${POSITION_INPUT}    ${employee_data}[position]","*Typing text 'Psychotherapist, child' into text field 'id:position'.","*${SAVE_BTN}","*Clicking element 'css:button[onclick='saveEmployee()']'.","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*${employee_data}[name]","*Verify Employee Exists","*Page Should Contain","*<p>Verifies that current page contains <code>text\x3c/code>.\x3c/p>","*${employee_name}","*Current page contains text 'Chelsea Williams'.","*Search Employee","*${name} = Zachary Sanders","*${department} = Careers adviser","*${position} = Fast food restaurant manager","*&amp;{employee} = { name=Zachary Sanders | department=Careers adviser | position=Fast food restaurant manager }","*${employee_data} = {'name': 'Zachary Sanders', 'department': 'Careers adviser', 'position': 'Fast food restaurant manager'}","*Typing text 'Zachary Sanders' into text field 'id:name'.","*Typing text 'Careers adviser' into text field 'id:department'.","*Typing text 'Fast food restaurant manager' into text field 'id:position'.","*${SEARCH_INPUT}    ${search_term}","*Typing text 'Zachary Sanders' into text field 'id:searchInput'.","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*1s","*Slept 1 second.","*Current page contains text 'Zachary Sanders'.","*Update Employee","*${name} = Jose Rivera","*${department} = Press photographer","*${position} = Field trials officer","*&amp;{employee} = { name=Jose Rivera | department=Press photographer | position=Field trials officer }","*${employee_data} = {'name': 'Jose Rivera', 'department': 'Press photographer', 'position': 'Field trials officer'}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '95', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Jose Rivera\", \"department\": \"Press photographer\", \"position\": \"Field trials officer\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Fri, 04 Apr 2025 08:34:28 GMT', 'server': 'uvicorn', 'content-length': '98', 'content-type': 'application/json'} \n body={\"name\":\"Jose Rivera\",\"department\":\"Press photographer\",\"position\":\"Field trials officer\",\"id\":82} \n ","*${response} = {'name': 'Jose Rivera', 'department': 'Press photographer', 'position': 'Field trials officer', 'id': 82}","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*${employee_id}","*${employee_id} = 82","*${updated_data}","*${name} = Aaron Spencer","*${department} = Immigration officer","*${position} = Financial controller","*&amp;{employee} = { name=Aaron Spencer | department=Immigration officer | position=Financial controller }","*${updated_data} = {'name': 'Aaron Spencer', 'department': 'Immigration officer', 'position': 'Financial controller'}","*Update Employee Via API","*${employee_id}    ${updated_data}","*${update_response}","*PUT On Session","*<p>Sends a PUT request on a previously created HTTP Session.\x3c/p>","*employee_api    /employees/${employee_id}    json=${employee_data}","*PUT Request : url=http://localhost:8000/employees/82 \n path_url=/employees/82 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '98', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Aaron Spencer\", \"department\": \"Immigration officer\", \"position\": \"Financial controller\"}' \n ","*PUT Response : url=http://localhost:8000/employees/82 \n status=200, reason=OK \n headers={'date': 'Fri, 04 Apr 2025 08:34:28 GMT', 'server': 'uvicorn', 'content-length': '101', 'content-type': 'application/json'} \n body={\"name\":\"Aaron Spencer\",\"department\":\"Immigration officer\",\"position\":\"Financial controller\",\"id\":82} \n ","*${response} = &lt;Response [200]&gt;","*200    ${response}","*${update_response} = {'name': 'Aaron Spencer', 'department': 'Immigration officer', 'position': 'Financial controller', 'id': 82}","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${update_response}[name]    ${updated_data}[name]","*Delete Employee","*${name} = Christina Herring","*${department} = Brewing technologist","*${position} = Community development worker","*&amp;{employee} = { name=Christina Herring | department=Brewing technologist | position=Community development worker }","*${employee_data} = {'name': 'Christina Herring', 'department': 'Brewing technologist', 'position': 'Community development worker'}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '111', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Christina Herring\", \"department\": \"Brewing technologist\", \"position\": \"Community development worker\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Fri, 04 Apr 2025 08:34:28 GMT', 'server': 'uvicorn', 'content-length': '114', 'content-type': 'application/json'} \n body={\"name\":\"Christina Herring\",\"department\":\"Brewing technologist\",\"position\":\"Community development worker\",\"id\":83} \n ","*${response} = {'name': 'Christina Herring', 'department': 'Brewing technologist', 'position': 'Community development worker', 'id': 83}","*${employee_id} = 83","*Delete Employee Via API","*DELETE On Session","*<p>Sends a DELETE request on a previously created HTTP Session.\x3c/p>","*employee_api    /employees/${employee_id}","*DELETE Request : url=http://localhost:8000/employees/83 \n path_url=/employees/83 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} \n body=None \n ","*DELETE Response : url=http://localhost:8000/employees/83 \n status=200, reason=OK \n headers={'date': 'Fri, 04 Apr 2025 08:34:28 GMT', 'server': 'uvicorn', 'content-length': '43', 'content-type': 'application/json'} \n body={\"message\":\"Employee deleted successfully\"} \n ","*Reload Page","*<p>Simulates user reloading page.\x3c/p>","*Verify Employee Does Not Exist","*Page Should Not Contain","*<p>Verifies the current page does not contain <code>text\x3c/code>.\x3c/p>","*Current page does not contain text 'Christina Herring'.","*Delete Multiple Employees","*${employee_data1}","*${name} = John Alvarez","*${department} = Lecturer, further education","*${position} = Scientist, marine","*&amp;{employee} = { name=John Alvarez | department=Lecturer, further education | position=Scientist, marine }","*${employee_data1} = {'name': 'John Alvarez', 'department': 'Lecturer, further education', 'position': 'Scientist, marine'}","*${response1}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '102', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"John Alvarez\", \"department\": \"Lecturer, further education\", \"position\": \"Scientist, marine\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Fri, 04 Apr 2025 08:34:29 GMT', 'server': 'uvicorn', 'content-length': '105', 'content-type': 'application/json'} \n body={\"name\":\"John Alvarez\",\"department\":\"Lecturer, further education\",\"position\":\"Scientist, marine\",\"id\":83} \n ","*${response1} = {'name': 'John Alvarez', 'department': 'Lecturer, further education', 'position': 'Scientist, marine', 'id': 83}","*${response1}[id]","*${employee_id1}","*${employee_id1} = 83","*${employee_data2}","*${name} = James Smith","*${department} = Homeopath","*${position} = Armed forces operational officer","*&amp;{employee} = { name=James Smith | department=Homeopath | position=Armed forces operational officer }","*${employee_data2} = {'name': 'James Smith', 'department': 'Homeopath', 'position': 'Armed forces operational officer'}","*${response2}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '98', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"James Smith\", \"department\": \"Homeopath\", \"position\": \"Armed forces operational officer\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Fri, 04 Apr 2025 08:34:29 GMT', 'server': 'uvicorn', 'content-length': '101', 'content-type': 'application/json'} \n body={\"name\":\"James Smith\",\"department\":\"Homeopath\",\"position\":\"Armed forces operational officer\",\"id\":84} \n ","*${response2} = {'name': 'James Smith', 'department': 'Homeopath', 'position': 'Armed forces operational officer', 'id': 84}","*${response2}[id]","*${employee_id2}","*${employee_id2} = 84","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${FRONTEND_URL}","*Opening url '<a href=\"http://localhost:8080\">http://localhost:8080\x3c/a>'","*id:employeeContainer","*2s","*Slept 2 seconds.","*Select Multiple Employees","*${employee_id1}    ${employee_id2}","*${id}    IN    @{employee_ids}","*${id} = 83","*id:check-${id}","*${checkbox_locator}","*${checkbox_locator} = id:check-83","*Scroll Element Into View","*<p>Scrolls the element identified by <code>locator\x3c/code> into view.\x3c/p>","*0.5s","*Slept 500 milliseconds.","*Clicking element 'id:check-83'.","*${id} = 84","*${checkbox_locator} = id:check-84","*Clicking element 'id:check-84'.","*Wait Until Element Is Enabled","*<p>Waits until the element <code>locator\x3c/code> is enabled.\x3c/p>","*id:deleteSelectedBtn","*Delete Selected Employees","*${delete_button}","*${delete_button} = id:deleteSelectedBtn","*Clicking element 'id:deleteSelectedBtn'.","*Handle Alert","*<p>Handles the current alert and returns its message.\x3c/p>","*ACCEPT","*HANDLE::&lt;class 'NoneType'&gt;::None","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*${employee_data1}[name]","*Current page does not contain text 'John Alvarez'.","*${employee_data2}[name]","*Current page does not contain text 'James Smith'.","*Run Keyword And Ignore Error","*<p>Runs the given keyword with the given arguments and ignores possible error.\x3c/p>","*Get Employee Via API    ${employee_id1}","*Get Employee Via API","*GET On Session","*<p>Sends a GET request on a previously created HTTP Session.\x3c/p>","*employee_api    /employees/${employee_id}    expected_status=404","*GET Request : url=http://localhost:8000/employees/83 \n path_url=/employees/83 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} \n body=None \n ","*GET Response : url=http://localhost:8000/employees/83 \n status=404, reason=Not Found \n headers={'date': 'Fri, 04 Apr 2025 08:34:39 GMT', 'server': 'uvicorn', 'content-length': '31', 'content-type': 'application/json'} \n body={\"detail\":\"Employee not found\"} \n ","*${response} = &lt;Response [404]&gt;","*Get Employee Via API    ${employee_id2}","*GET Request : url=http://localhost:8000/employees/84 \n path_url=/employees/84 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} \n body=None \n ","*GET Response : url=http://localhost:8000/employees/84 \n status=404, reason=Not Found \n headers={'date': 'Fri, 04 Apr 2025 08:34:39 GMT', 'server': 'uvicorn', 'content-length': '31', 'content-type': 'application/json'} \n body={\"detail\":\"Employee not found\"} \n ","*Verify Page Titles","*css:.navbar-brand","*Verify Page Title","*Get Title","*<p>Returns the title of the current page.\x3c/p>","*${title}","*${title} = Employee System","*${title}    Employee System","*Element Text Should Be","*<p>Verifies that element <code>locator\x3c/code> contains exact the text <code>expected\x3c/code>.\x3c/p>","*css:.navbar-brand    Employee System","*Verifying element 'css:.navbar-brand' contains exact text 'Employee System'.","*Setup Test Suite","*Create Session","*<p>Create Session: create a HTTP session to a server\x3c/p>","*employee_api    ${BASE_URL}    verify=True","*Creating Session using : alias=employee_api, url=http://localhost:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 ","*Open Browser","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${FRONTEND_URL}    ${BROWSER}","*Opening browser 'edge' to base url '<a href=\"http://localhost:8080\">http://localhost:8080\x3c/a>'.","*Applicable driver not found; attempting to install with Selenium Manager (Beta)","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Close All Browsers","*<p>Closes all open browsers and resets the browser cache.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Employee Tests","*E:\\ERP\\dev\\CursorAI\\auto-dev\\employee_tests.robot","*employee_tests.robot","*Create New Employee Via API","*Generate Random Employee Data","*${employee_data}","*Name","*FakerLibrary","*<p>:example: 'John Doe'\x3c/p>","*${name}","*${name} = William Nielsen DDS","*Job","*${department}","*${department} = Fast food restaurant manager","*${position}","*${position} = Financial manager","*Create Dictionary","*BuiltIn","*<p>Creates and returns a dictionary based on the given <code>items\x3c/code>.\x3c/p>","*name=${name}, department=${department}, position=${position}","*&amp;{employee}","*&amp;{employee} = { name=William Nielsen DDS | department=Fast food restaurant manager | position=Financial manager }","*${employee_data} = {'name': 'William Nielsen DDS', 'department': 'Fast food restaurant manager', 'position': 'Financial manager'}","*Create Employee Via API","*${response}","*POST On Session","*RequestsLibrary","*<p>Sends a POST request on a previously created HTTP Session.\x3c/p>","*employee_api, /employees/, json=${employee_data}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '110', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"William Nielsen DDS\", \"department\": \"Fast food restaurant manager\", \"position\": \"Financial manager\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Tue, 08 Apr 2025 17:00:44 GMT', 'server': 'uvicorn', 'content-length': '113', 'content-type': 'application/json'} \n body={\"name\":\"William Nielsen DDS\",\"department\":\"Fast food restaurant manager\",\"position\":\"Financial manager\",\"id\":91} \n ","*${response} = &lt;Response [201]&gt;","*Status Should Be","*<p>Fails if response status code is different than the expected.\x3c/p>","*201, ${response}","*${response.json()}","*${response} = {'name': 'William Nielsen DDS', 'department': 'Fast food restaurant manager', 'position': 'Financial manager', 'id': 91}","*Convert To String","*<p>Converts the given item to a Unicode string.\x3c/p>","*${response}[id]","*${id_str}","*${id_str} = 91","*Should Not Be Empty","*<p>Verifies that the given item is not empty.\x3c/p>","*Length is 2","*Should Be Equal As Strings","*<p>Fails if objects are unequal after converting them to strings.\x3c/p>","*${response}[name], ${employee_data}[name]","*${response}[department], ${employee_data}[department]","*${response}[position], ${employee_data}[position]","*Create New Employee Via UI","*${name} = Erik Dean","*${department} = Engineer, energy","*${position} = Geophysicist/field seismologist","*&amp;{employee} = { name=Erik Dean | department=Engineer, energy | position=Geophysicist/field seismologist }","*${employee_data} = {'name': 'Erik Dean', 'department': 'Engineer, energy', 'position': 'Geophysicist/field seismologist'}","*Create Employee Via UI","*Click Element","*SeleniumLibrary","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${ADD_EMPLOYEE_BTN}","*Clicking element 'css:button[onclick='showAddModal()']'.","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${NAME_INPUT}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${NAME_INPUT}, ${employee_data}[name]","*Typing text 'Erik Dean' into text field 'id:name'.","*${DEPARTMENT_INPUT}, ${employee_data}[department]","*Typing text 'Engineer, energy' into text field 'id:department'.","*${POSITION_INPUT}, ${employee_data}[position]","*Typing text 'Geophysicist/field seismologist' into text field 'id:position'.","*${SAVE_BTN}","*Clicking element 'css:button[onclick='saveEmployee()']'.","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*${employee_data}[name]","*Verify Employee Exists","*Page Should Contain","*<p>Verifies that current page contains <code>text\x3c/code>.\x3c/p>","*${employee_name}","*Current page contains text 'Erik Dean'.","*Search Employee","*${name} = Barbara Maldonado","*${department} = Acupuncturist","*${position} = Librarian, academic","*&amp;{employee} = { name=Barbara Maldonado | department=Acupuncturist | position=Librarian, academic }","*${employee_data} = {'name': 'Barbara Maldonado', 'department': 'Acupuncturist', 'position': 'Librarian, academic'}","*Typing text 'Barbara Maldonado' into text field 'id:name'.","*Typing text 'Acupuncturist' into text field 'id:department'.","*Typing text 'Librarian, academic' into text field 'id:position'.","*${SEARCH_INPUT}, ${search_term}","*Typing text 'Barbara Maldonado' into text field 'id:searchInput'.","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*1s","*Slept 1 second","*Current page contains text 'Barbara Maldonado'.","*Update Employee","*${name} = Cody Reynolds","*${department} = Surveyor, insurance","*${position} = Interior and spatial designer","*&amp;{employee} = { name=Cody Reynolds | department=Surveyor, insurance | position=Interior and spatial designer }","*${employee_data} = {'name': 'Cody Reynolds', 'department': 'Surveyor, insurance', 'position': 'Interior and spatial designer'}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '107', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Cody Reynolds\", \"department\": \"Surveyor, insurance\", \"position\": \"Interior and spatial designer\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Tue, 08 Apr 2025 17:00:51 GMT', 'server': 'uvicorn', 'content-length': '110', 'content-type': 'application/json'} \n body={\"name\":\"Cody Reynolds\",\"department\":\"Surveyor, insurance\",\"position\":\"Interior and spatial designer\",\"id\":94} \n ","*${response} = {'name': 'Cody Reynolds', 'department': 'Surveyor, insurance', 'position': 'Interior and spatial designer', 'id': 94}","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*${employee_id}","*${employee_id} = 94","*${updated_data}","*${name} = Gina Thompson","*${department} = Marketing executive","*${position} = Pharmacist, hospital","*&amp;{employee} = { name=Gina Thompson | department=Marketing executive | position=Pharmacist, hospital }","*${updated_data} = {'name': 'Gina Thompson', 'department': 'Marketing executive', 'position': 'Pharmacist, hospital'}","*Update Employee Via API","*${employee_id}, ${updated_data}","*${update_response}","*PUT On Session","*<p>Sends a PUT request on a previously created HTTP Session.\x3c/p>","*employee_api, /employees/${employee_id}, json=${employee_data}","*PUT Request : url=http://localhost:8000/employees/94 \n path_url=/employees/94 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '98', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Gina Thompson\", \"department\": \"Marketing executive\", \"position\": \"Pharmacist, hospital\"}' \n ","*PUT Response : url=http://localhost:8000/employees/94 \n status=200, reason=OK \n headers={'date': 'Tue, 08 Apr 2025 17:00:51 GMT', 'server': 'uvicorn', 'content-length': '101', 'content-type': 'application/json'} \n body={\"name\":\"Gina Thompson\",\"department\":\"Marketing executive\",\"position\":\"Pharmacist, hospital\",\"id\":94} \n ","*${response} = &lt;Response [200]&gt;","*200, ${response}","*${update_response} = {'name': 'Gina Thompson', 'department': 'Marketing executive', 'position': 'Pharmacist, hospital', 'id': 94}","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${update_response}[name], ${updated_data}[name]","*Delete Employee","*${name} = Vickie Gray","*${department} = Electronics engineer","*${position} = Risk analyst","*&amp;{employee} = { name=Vickie Gray | department=Electronics engineer | position=Risk analyst }","*${employee_data} = {'name': 'Vickie Gray', 'department': 'Electronics engineer', 'position': 'Risk analyst'}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '89', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Vickie Gray\", \"department\": \"Electronics engineer\", \"position\": \"Risk analyst\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Tue, 08 Apr 2025 17:00:51 GMT', 'server': 'uvicorn', 'content-length': '92', 'content-type': 'application/json'} \n body={\"name\":\"Vickie Gray\",\"department\":\"Electronics engineer\",\"position\":\"Risk analyst\",\"id\":95} \n ","*${response} = {'name': 'Vickie Gray', 'department': 'Electronics engineer', 'position': 'Risk analyst', 'id': 95}","*${employee_id} = 95","*Delete Employee Via API","*DELETE On Session","*<p>Sends a DELETE request on a previously created HTTP Session.\x3c/p>","*employee_api, /employees/${employee_id}","*DELETE Request : url=http://localhost:8000/employees/95 \n path_url=/employees/95 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} \n body=None \n ","*DELETE Response : url=http://localhost:8000/employees/95 \n status=200, reason=OK \n headers={'date': 'Tue, 08 Apr 2025 17:00:51 GMT', 'server': 'uvicorn', 'content-length': '43', 'content-type': 'application/json'} \n body={\"message\":\"Employee deleted successfully\"} \n ","*Reload Page","*<p>Simulates user reloading page.\x3c/p>","*Verify Employee Does Not Exist","*Page Should Not Contain","*<p>Verifies the current page does not contain <code>text\x3c/code>.\x3c/p>","*Current page does not contain text 'Vickie Gray'.","*Delete Multiple Employees","*${employee_data1}","*${name} = Paul Lopez","*${department} = Magazine features editor","*${position} = Civil engineer, consulting","*&amp;{employee} = { name=Paul Lopez | department=Magazine features editor | position=Civil engineer, consulting }","*${employee_data1} = {'name': 'Paul Lopez', 'department': 'Magazine features editor', 'position': 'Civil engineer, consulting'}","*${response1}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '106', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Paul Lopez\", \"department\": \"Magazine features editor\", \"position\": \"Civil engineer, consulting\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Tue, 08 Apr 2025 17:00:52 GMT', 'server': 'uvicorn', 'content-length': '109', 'content-type': 'application/json'} \n body={\"name\":\"Paul Lopez\",\"department\":\"Magazine features editor\",\"position\":\"Civil engineer, consulting\",\"id\":95} \n ","*${response1} = {'name': 'Paul Lopez', 'department': 'Magazine features editor', 'position': 'Civil engineer, consulting', 'id': 95}","*${response1}[id]","*${employee_id1}","*${employee_id1} = 95","*${employee_data2}","*${name} = Tiffany Banks","*${department} = Geoscientist","*${position} = Dance movement psychotherapist","*&amp;{employee} = { name=Tiffany Banks | department=Geoscientist | position=Dance movement psychotherapist }","*${employee_data2} = {'name': 'Tiffany Banks', 'department': 'Geoscientist', 'position': 'Dance movement psychotherapist'}","*${response2}","*POST Request : url=http://localhost:8000/employees/ \n path_url=/employees/ \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '101', 'Content-Type': 'application/json'} \n body=b'{\"name\": \"Tiffany Banks\", \"department\": \"Geoscientist\", \"position\": \"Dance movement psychotherapist\"}' \n ","*POST Response : url=http://localhost:8000/employees/ \n status=201, reason=Created \n headers={'date': 'Tue, 08 Apr 2025 17:00:52 GMT', 'server': 'uvicorn', 'content-length': '104', 'content-type': 'application/json'} \n body={\"name\":\"Tiffany Banks\",\"department\":\"Geoscientist\",\"position\":\"Dance movement psychotherapist\",\"id\":96} \n ","*${response2} = {'name': 'Tiffany Banks', 'department': 'Geoscientist', 'position': 'Dance movement psychotherapist', 'id': 96}","*${response2}[id]","*${employee_id2}","*${employee_id2} = 96","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${FRONTEND_URL}","*Opening url '<a href=\"http://localhost:8080\">http://localhost:8080\x3c/a>'","*id:employeeContainer","*2s","*Slept 2 seconds","*Select Multiple Employees","*${employee_id1}, ${employee_id2}","*${id} IN [ @{employee_ids} ]","*${id} = 95","*id:check-${id}","*${checkbox_locator}","*${checkbox_locator} = id:check-95","*Scroll Element Into View","*<p>Scrolls the element identified by <code>locator\x3c/code> into view.\x3c/p>","*0.5s","*Slept 500 milliseconds","*Clicking element 'id:check-95'.","*${id} = 96","*${checkbox_locator} = id:check-96","*Clicking element 'id:check-96'.","*Wait Until Element Is Enabled","*<p>Waits until the element <code>locator\x3c/code> is enabled.\x3c/p>","*id:deleteSelectedBtn","*Delete Selected Employees","*${delete_button}","*${delete_button} = id:deleteSelectedBtn","*Clicking element 'id:deleteSelectedBtn'.","*Handle Alert","*<p>Handles the current alert and returns its message.\x3c/p>","*ACCEPT","*HANDLE::&lt;class 'NoneType'&gt;::None","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*${employee_data1}[name]","*Current page does not contain text 'Paul Lopez'.","*${employee_data2}[name]","*Current page does not contain text 'Tiffany Banks'.","*Run Keyword And Ignore Error","*<p>Runs the given keyword with the given arguments and ignores possible error.\x3c/p>","*Get Employee Via API, ${employee_id1}","*Get Employee Via API","*GET On Session","*<p>Sends a GET request on a previously created HTTP Session.\x3c/p>","*employee_api, /employees/${employee_id}, expected_status=404","*GET Request : url=http://localhost:8000/employees/95 \n path_url=/employees/95 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} \n body=None \n ","*GET Response : url=http://localhost:8000/employees/95 \n status=404, reason=Not Found \n headers={'date': 'Tue, 08 Apr 2025 17:01:01 GMT', 'server': 'uvicorn', 'content-length': '31', 'content-type': 'application/json'} \n body={\"detail\":\"Employee not found\"} \n ","*${response} = &lt;Response [404]&gt;","*Get Employee Via API, ${employee_id2}","*GET Request : url=http://localhost:8000/employees/96 \n path_url=/employees/96 \n headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} \n body=None \n ","*GET Response : url=http://localhost:8000/employees/96 \n status=404, reason=Not Found \n headers={'date': 'Tue, 08 Apr 2025 17:01:01 GMT', 'server': 'uvicorn', 'content-length': '31', 'content-type': 'application/json'} \n body={\"detail\":\"Employee not found\"} \n ","*Verify Page Titles","*css:.navbar-brand","*Verify Page Title","*Get Title","*<p>Returns the title of the current page.\x3c/p>","*${title}","*${title} = Employee System","*${title}, Employee System","*Element Text Should Be","*<p>Verifies that element <code>locator\x3c/code> contains exact the text <code>expected\x3c/code>.\x3c/p>","*css:.navbar-brand, Employee System","*Verifying element 'css:.navbar-brand' contains exact text 'Employee System'.","*Setup Test Suite","*Create Session","*<p>Create Session: create a HTTP session to a server\x3c/p>","*employee_api, ${BASE_URL}, verify=True","*Creating Session using : alias=employee_api, url=http://localhost:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 ","*Open Browser","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${FRONTEND_URL}, ${BROWSER}","*Opening browser 'edge' to base url '<a href=\"http://localhost:8080\">http://localhost:8080\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Close All Browsers","*<p>Closes all open browsers and resets the browser cache.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:22","fail":0,"label":"All Tests","pass":7,"skip":0}],[],[{"elapsed":"00:00:37","fail":0,"id":"s1","label":"Employee Tests","name":"Employee Tests","pass":7,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:20","fail":0,"label":"All Tests","pass":7,"skip":0}],[],[{"elapsed":"00:00:32","fail":0,"id":"s1","label":"Employee Tests","name":"Employee Tests","pass":7,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1743755650020;
+window.output["baseMillis"] = 1744131637416;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 37150;
+window.output["generated"] = 31825;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2099,7 +1834,7 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
 </script>
 <title></title>
 </head>
-<body data-theme="dark">
+<body>
 <div id="javascript-disabled">
   <h1>Opening Robot Framework log failed</h1>
   <ul>
@@ -2109,13 +1844,12 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
   </ul>
 </div>
 <script type="text/javascript">removeJavaScriptDisabledWarning();</script>
+
 <div id="header"></div>
 <div id="statistics-container"></div>
 
 <script type="text/javascript">
 $(document).ready(function() {
-    storage.init();
-    theme.init(storage);
     try {
         var topsuite = window.testdata.suite();
     } catch (error) {
@@ -2123,7 +1857,6 @@ $(document).ready(function() {
         return;
     }
     initLayout(topsuite.name, 'Log');
-    theme.reflectPreference();
     addStatistics();
     addErrors();
     addExecutionLog(topsuite);
@@ -2164,6 +1897,25 @@ function drawErrorsRecursively(errors, target) {
         // Errors may have moved scroll position. Resetting location re-scrolls.
         if (window.location.hash)
             window.location.replace(window.location.hash);
+        highlightLinkTarget();
+    }
+}
+
+function highlightLinkTarget() {
+    if (window.location.hash) {
+        var target = $(window.location.hash);
+        highlight(target);
+    }
+}
+
+function highlight(element, color) {
+    if (color === undefined)
+        color = 242;
+    if (color < 255) {
+        element.css({'background-color': 'rgb('+color+','+color+','+color+')'});
+        setTimeout(function () { highlight(element, color+1); }, 300);
+    } else {
+        element.css({'background-color': ''});
     }
 }
 
@@ -2181,6 +1933,7 @@ function makeElementVisible(id) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
             window.location.hash = id;
             document.getElementById(id).scrollIntoView();
+            highlightLinkTarget();
         }
     });
 }
@@ -2204,7 +1957,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="${doc}">
+    <td class="stats-col-name" title="{{html doc}}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}
@@ -2378,9 +2131,8 @@ function addExecutionLog(main) {
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
         <span class="label ${status.toLowerCase()}">${type}</span>
-        <span class="assign">{{html assign}}</span>
+        <span>{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
-        &nbsp;
         <span class="arg">{{html arguments}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)">
@@ -2414,12 +2166,6 @@ function addExecutionLog(main) {
           <th>Start / End / Elapsed:</th>
           <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
         </tr>
-        {{if message()}}
-        <tr>
-          <th>Message:</th>
-          <td class="message">{{html message()}}</td>
-        </tr>
-        {{/if}}
       </table>
     </div>
   </div>
@@ -2442,7 +2188,6 @@ function addExecutionLog(main) {
   <div id="log-level-selector">
   Log level:
     <select onchange="logLevelSelected(this.options[selectedIndex].value)">
-      <option value="3">WARN</option>
       <option value="2">INFO</option>
       <option value="1">DEBUG</option>
       {{if showTrace()}}<option value="0">TRACE</option>{{/if}}
